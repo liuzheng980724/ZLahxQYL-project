@@ -1,31 +1,22 @@
 package zlahxqyl;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
+import java.awt.Container;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class background {
-	
-    public BufferedImage image;
-    public background() {
-    	try {
-    		image = ImageIO.read(new File("image/bground.png"));
-    		} catch (IOException e) {
-			e.printStackTrace();
-			}
-    	}
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-}
-
-
-/* debug use
-public class background extends JFrame
+public class backup_background extends JFrame
 {  
     Container ct;   
     BackgroundPanel bgp;  
         
-    public background()  
+    public backup_background()  
     {  
 	    super("Zheng's Game");
         ct=this.getContentPane();
@@ -91,4 +82,3 @@ class BackgroundPanel extends JPanel
         g.drawImage(im,0,0,this.getWidth(),this.getHeight(),this);
     }
 }
-*/

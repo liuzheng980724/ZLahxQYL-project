@@ -6,11 +6,11 @@ public class main {
 		mainlayout frame = new mainlayout();
         frame.setVisible(true);
 		
-		
-		
-		//new background();
-        //new button().navigationbuttpon();
-		//new OutLayout();
-		//new mainlayout();
+		/* Debug use
+		 new background();
+        new button().navigationbuttpon();
+		new OutLayout();
+		new mainlayout();
+		 */
 	}
 }
