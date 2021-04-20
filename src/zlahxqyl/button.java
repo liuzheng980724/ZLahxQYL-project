@@ -15,7 +15,7 @@ public class button extends JPanel{
         JButton right=new JButton("E");  
         
         up.setBounds(500,55,50,50);
-        down.setBounds(500,155,50,50);
+        down.setBounds(500,105,50,50);
         left.setBounds(450,105,50,50);
         right.setBounds(550,105,50,50);
         

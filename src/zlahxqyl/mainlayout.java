@@ -11,6 +11,7 @@ public class mainlayout extends JFrame {
 		setBounds(500,10,662,1004);
 		setTitle("Zheng's Game");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setResizable(false); //Limit change windows size.
         add(statusbar);
 		statusbar.setBounds(0, 0, 646, 52);
 		add(panel);
