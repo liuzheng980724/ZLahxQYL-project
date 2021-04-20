@@ -5,10 +5,11 @@ import javax.swing.JFrame;
 
 public class mainlayout extends JFrame {
 	public mainlayout() {
-		setBounds(0,0,646,913);
+		setBounds(450,50,646,952);
 		setTitle("Zheng's Game");
 		start();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
 	}
 	
     public void start() {
