@@ -1,25 +1,20 @@
 package zlahxqyl;
 
-import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import people.peopleObj;
 
 public class mainlayout extends JFrame {
 	private statusBar statusbar=new statusBar();
-	private peopleObj people=new peopleObj(305,570);//创建角色
+	private peopleObj people=new peopleObj(305,570); //People
 	private background background=new background();
 
 
-	private int Direction; //人物方向状态
+	private int Direction; //People Direction
 	
 	public mainlayout() {
 		setBounds(500,10,662,1004);
@@ -38,7 +33,7 @@ public class mainlayout extends JFrame {
 		statusbar.setBounds(0, 0, 646, 52);
 		background.setBounds(0, 52, 646, 913);
 
-		this.addKeyListener(new keypress());//对窗口键盘监听控制人物和快捷键
+		this.addKeyListener(new keypress());//Listen KEYBOARD
 	}
 	
 	public void button() {
@@ -65,7 +60,6 @@ public class mainlayout extends JFrame {
         
         up.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	//new acquisitiontest().keytest(0);
 				people.movey(-5);
 				mainlayout.this.repaint();
             }
@@ -73,7 +67,6 @@ public class mainlayout extends JFrame {
 
         down.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	//new acquisitiontest().keytest(1);
 				people.movey(5);
 				mainlayout.this.repaint();
             }
@@ -81,7 +74,6 @@ public class mainlayout extends JFrame {
 
         left.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	//new acquisitiontest().keytest(2);
 				people.movex(-5);
 				mainlayout.this.repaint();
             }
@@ -89,45 +81,39 @@ public class mainlayout extends JFrame {
 
         right.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	//new acquisitiontest().keytest(3);
 				people.movex(5);
 				mainlayout.this.repaint();
             }
         });
     }	
 	
-	public class keypress extends KeyAdapter//键盘监听
+	public class keypress extends KeyAdapter
 	{
-		public void keyPressed(KeyEvent e)//按下
+		public void keyPressed(KeyEvent e)
 		{
-			//System.out.println(e.getKeyChar()+"键被敲击");
-			if(e.getKeyCode()==KeyEvent.VK_UP)//上
+			if(e.getKeyCode()==KeyEvent.VK_UP)
 			{
-            	//new acquisitiontest().keytest(0);
 				people.movey(-5);
 				mainlayout.this.repaint();
 			}
-			if(e.getKeyCode()==KeyEvent.VK_DOWN)//下
+			if(e.getKeyCode()==KeyEvent.VK_DOWN)
 			{
-            	//new acquisitiontest().keytest(1);
 				people.movey(5);
 				mainlayout.this.repaint();
 			}
-			if(e.getKeyCode()==KeyEvent.VK_RIGHT)//右
+			if(e.getKeyCode()==KeyEvent.VK_RIGHT)
 			{
-            	//new acquisitiontest().keytest(3);
 				people.movex(5);
 				mainlayout.this.repaint();
 			}
-			if(e.getKeyCode()==KeyEvent.VK_LEFT)//左
+			if(e.getKeyCode()==KeyEvent.VK_LEFT)
 			{
-            	//new acquisitiontest().keytest(2);
 				people.movex(-5);
 				mainlayout.this.repaint();
 			}
 		}	
 		
-		public void keyReleased(KeyEvent e)//释放
+		public void keyReleased(KeyEvent e)
 		{
 			/*
 			if(e.getKeyCode()==KeyEvent.VK_RIGHT)
