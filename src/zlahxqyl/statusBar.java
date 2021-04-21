@@ -11,7 +11,7 @@ public class statusBar extends JPanel {
 	private int hp=100;	//TEST NUM
 	private int length=345;
 	
-	public void paint(Graphics g){
+	public void paint(Graphics g){	//paintcomponent super (g1)
 	    g.drawImage(Toolkit.getDefaultToolkit().getImage("image/NEW-BAR.png"),0,0,this); 
 	    g.setColor(Color.RED);
 	    g.fillRect(182, 19, (int)((double)hp/allhp*length), 15);
