@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 public class peopleObj extends JPanel {
 	private int status=2;//人物状态
 
-	//屏幕坐标
 	private int x;
 	private int y;
 	
@@ -64,7 +63,8 @@ public class peopleObj extends JPanel {
 		case 8:g.drawImage(Toolkit.getDefaultToolkit().getImage("./image/people/forword/面朝右站.gif"),x-40,y-86,this);break;
 		case 9:g.drawImage(Toolkit.getDefaultToolkit().getImage("./image/people/forword/面朝左站.gif"),x-24,y-86,this);break;		
 		}
-		g.drawString("屏幕位置："+"x="+Integer.toString(x)+"y="+Integer.toString(y),645,525);
+		g.drawString("People位置："+"x="+Integer.toString(x)+"y="+Integer.toString(y),500,880);	//TEST USE
+		g.drawString("People",0,70);	//TEST USE
 	}
 
 
