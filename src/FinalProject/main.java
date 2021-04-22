@@ -75,7 +75,7 @@ public class main {
         System.out.println("\nEnter 1 to North");
         System.out.println("Enter 2 to South");
         System.out.println("Enter 3 to West");
-        System.out.println("Enter 4 to West");
+        System.out.println("Enter 4 to East");
         System.out.println("INPUT YOUR CHOOSE:");
         int userInput = input.nextInt();
         int navigation = userInput;
@@ -93,7 +93,6 @@ public class main {
 			xReal++;
 			break;
 		}
-        input.close();
 		System.out.println("yReal=" + yReal);
 		System.out.println("xReal=" + xReal);
 	}
