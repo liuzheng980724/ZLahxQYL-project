@@ -25,7 +25,7 @@ public class main {
 	    	JOptionPane.showMessageDialog(f,"ERROR!!! MAP cannot Load."); 
 	    }
 		System.out.println("\nMAP END");
-	    while (youWin == true) {
+	    while (youWin == false) {
 	    	navigationPannel();
 	    	drawMap(xReal,yReal);
 	    }
