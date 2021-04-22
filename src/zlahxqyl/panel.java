@@ -18,7 +18,7 @@ public class panel extends JPanel {
     }
 
     public void paint(Graphics g) {	//Draw panel
-    	g2.drawImage(background.image, 0, 0, this); //Get backgroundIMG from new background()
+    //	g2.drawImage(background.image, 0, 0, this); //Get backgroundIMG from new background()
         g.drawImage(image, 0, 0, this);
     }
 

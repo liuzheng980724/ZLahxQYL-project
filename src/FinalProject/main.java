@@ -19,20 +19,12 @@ public class main {
 		yReal=3;
 	    JFrame f = new JFrame();
 	    JOptionPane.showMessageDialog(f,"Hello, Let's Start the Game."); 
-		System.out.println("MAP Start");
-	    drawMap(xReal,yReal);
-	    if (maploadDone == 1) {
-	    	JOptionPane.showMessageDialog(f,"The game has started, now please pay attention to the map output from the console."); 
-	    }
-	    else {
-	    	JOptionPane.showMessageDialog(f,"ERROR!!! MAP cannot Load."); 
-	    }
-		System.out.println("\nMAP END");
+	    JOptionPane.showMessageDialog(f,"The game has started, now please pay attention to the map output from the console."); 
 	    while (youWin == false) {
-	    	permissionIndex.index(xReal, yReal, 0, 0);
+	    	missionIndex.index(xReal, yReal, 0);
 	    	backPreviousPoint();
-	    	navigationPannel();
 	    	drawMap(xReal,yReal);
+	    	navigationPannel();
 	    }
     	JOptionPane.showMessageDialog(f,"Congratulations! ! you win! !"); 
 	}
@@ -77,10 +69,6 @@ public class main {
 	
 	public static void navigationPannel() {
 		System.out.println("setreprintMAP=" + setreprintMAP);	//DEBUG USE
-		if (setreprintMAP == 1) {
-			drawMap(xReal,yReal);
-	    	permissionIndex.index(xReal, yReal, 1, 0);
-		}
         Scanner input=new Scanner(System.in);
         System.out.println("\nEnter 1 to North");
         System.out.println("Enter 2 to South");
@@ -136,6 +124,6 @@ public class main {
 		inputBuffer [1] = 0;
 		inputBuffer [2] = 0;
 		inputBuffer [3] = 0;
-    	permissionIndex.index(xReal, yReal, 1, 0);
+		missionIndex.index(xReal,yReal,1);
 	}
 }
