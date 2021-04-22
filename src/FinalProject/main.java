@@ -10,11 +10,14 @@ public class main {
 	 static int maploadDone = 0;
 	 static int xReal=0;
 	 static int yReal=0;
+	 static int setuserNotAllowGame = 0;
+	 static int setreprintMAP = 0;
+	 static int [] inputBuffer = {0,0,0,0};
 	 
 	public static void main (String[] args) {
 		xReal=3;
 		yReal=3;
-	    JFrame f = new JFrame();  
+	    JFrame f = new JFrame();
 	    JOptionPane.showMessageDialog(f,"Hello, Let's Start the Game."); 
 		System.out.println("MAP Start");
 	    drawMap(xReal,yReal);
@@ -26,12 +29,14 @@ public class main {
 	    }
 		System.out.println("\nMAP END");
 	    while (youWin == false) {
+	    	permissionIndex.index(xReal, yReal, 0, 0);
+	    	backPreviousPoint();
 	    	navigationPannel();
 	    	drawMap(xReal,yReal);
 	    }
     	JOptionPane.showMessageDialog(f,"Congratulations! ! you win! !"); 
 	}
-	
+
 	public static int drawMap (int xReal, int yReal) {
 		int gridFinal = 5;
 		int totalLine = 5;
@@ -71,6 +76,11 @@ public class main {
 	}
 	
 	public static void navigationPannel() {
+		System.out.println("setreprintMAP=" + setreprintMAP);	//DEBUG USE
+		if (setreprintMAP == 1) {
+			drawMap(xReal,yReal);
+	    	permissionIndex.index(xReal, yReal, 1, 0);
+		}
         Scanner input=new Scanner(System.in);
         System.out.println("\nEnter 1 to North");
         System.out.println("Enter 2 to South");
@@ -82,19 +92,50 @@ public class main {
         switch (navigation) {
 		case 1:
 			yReal--;
+			inputBuffer[0] = 1;
 			break;
 		case 2:
 			yReal++;
+			inputBuffer[1] = 1;
 			break;
 		case 3:
 			xReal--;
+			inputBuffer[2] = 1;
 			break;
 		case 4:
 			xReal++;
+			inputBuffer[3] = 1;
 			break;
 		}
-		System.out.println("yReal=" + yReal);
-		System.out.println("xReal=" + xReal);
+		System.out.println("yReal=" + yReal);	//DEBUD USE
+		System.out.println("xReal=" + xReal);	//DEBUD USE
 	}
 	
+	public static void getstatus (int userNotAllowGame, int reprintMAP) {
+		setuserNotAllowGame = userNotAllowGame;
+		setreprintMAP = reprintMAP;
+		
+	}
+	
+	public static void backPreviousPoint() {
+		if (setuserNotAllowGame == 1) {	
+			if (inputBuffer[0] == 1) {
+				yReal++;
+			}
+			if (inputBuffer[1] == 1) {
+				yReal--;
+			}
+			if (inputBuffer[2] == 1) {
+				xReal++;
+			}
+			if (inputBuffer[3] == 1) {
+				xReal--;
+			}
+		}
+		inputBuffer [0] = 0;
+		inputBuffer [1] = 0;
+		inputBuffer [2] = 0;
+		inputBuffer [3] = 0;
+    	permissionIndex.index(xReal, yReal, 1, 0);
+	}
 }
