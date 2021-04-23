@@ -101,8 +101,7 @@ public class main {
 	
 	public static void getstatus (int userNotAllowGame, int reprintMAP) {
 		setuserNotAllowGame = userNotAllowGame;
-		setreprintMAP = reprintMAP;
-		
+		setreprintMAP = reprintMAP;	
 	}
 	
 	public static void backPreviousPoint() {

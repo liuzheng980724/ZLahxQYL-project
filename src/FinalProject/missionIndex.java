@@ -11,6 +11,12 @@ public class missionIndex {
 		if (reset == 1) {
 			userNotAllowGame = 0;
 		}
+		if (reset == 2) {
+			System.out.println("\nTeleport back to the previous location.");
+			userNotAllowGame = 1;
+			backstatus();
+			return userNotAllowGame;
+		}
 		if (xReal == 3 & yReal == 2 & reset == 0) {
 			userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! River Crossing. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
 			if (userFeedback == 0) {
