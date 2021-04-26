@@ -7,6 +7,7 @@ public class missionIndex {
 	public static int userNotAllowGame = 0;
 	public static int reprintMAP = 0;
 	public static int clearStage[] = {0,0};
+	public static int myBag[] = {0,0,0};
 	
 	public static int index(int xReal, int yReal, int reset) {
 		if (reset == 1) {
@@ -43,6 +44,19 @@ public class missionIndex {
 			
 		}
 		}
+		if (xReal == 4 & yReal == 4 & reset == 0) {
+			if (myBag [2] == 0) {
+			userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Cottage. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
+			if (userFeedback == 0) {
+				System.out.println("\nStart transferring");
+				cottage.gamestart();
+			}
+			else {
+				System.out.println("\nTeleport back to the previous location.");
+				userNotAllowGame = 1;
+			}
+			}
+		}
 		System.out.println(userNotAllowGame); //DEBUD USE
 		backstatus();
 		return userNotAllowGame;
@@ -55,5 +69,10 @@ public class missionIndex {
 	 public static int[] getClearStage (int[] getClearStage) {
 		 clearStage = getClearStage;
 		return clearStage;
+	 }
+	 
+	 public static int[] yourBag (int[] getBag) {
+		 myBag = getBag;
+		return myBag;
 	 }
 }
