@@ -26,5 +26,6 @@ public class Inventory {
 			riverCrossing.yourBag(yourBag);
 			forestTrail.yourBag(yourBag);
 			missionIndex.yourBag(yourBag);
+			main.yourBag(yourBag);
 	 }
 }

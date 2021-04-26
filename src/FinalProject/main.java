@@ -13,6 +13,7 @@ public class main {
 	 static int setuserNotAllowGame = 0;
 	 static int setreprintMAP = 0;
 	 static int [] inputBuffer = {0,0,0,0};
+	 public static int myBag[] = {0,0,0};
 	 
 	public static void main (String[] args) {
 		xReal=3;
@@ -46,7 +47,13 @@ public class main {
 					haveDraw = 1;
 				}
 				else {
+					if (line == 0 & b == 0) {
+						System.out.print("|CLIFF'S  EDGE|");
+					}else if (line == 0 & b == 4) {
+						System.out.print("| ITEM:  CAMP |");
+					}else {
 					System.out.print("|             |");
+					}
 				}
 
 				for (int c = 0;c < gridFinal-1;c++ ) {
@@ -54,7 +61,51 @@ public class main {
 						System.out.print("You Are Here!|");
 					}
 					else {
+						if (c == 0 & line == 0 & b == 0) {
+							System.out.print("COBSTONE PATH|");
+						}else if (c == 1 & line == 0 & b == 0) {
+							System.out.print("DARK  DUNGEON|");
+						}else if (c == 1 & line == 0 & b == 4) {
+							System.out.print(" NEED CAMP!! |");
+						}else if (c == 2 & line == 0 & b == 0) {
+							System.out.print("   DRAGON!   |");
+						}else if (c == 2 & line == 0 & b == 4) {
+							System.out.print(" MUST DEFEAT |");
+						}else if (c == 3 & line == 0 & b == 0) {
+							System.out.print("   CASTLE!   |");
+						}else if (c == 3 & line == 0 & b == 4) {
+							System.out.print(" (WIN POINT) |");
+						}else if (c == 0 & line == 1 & b == 0) {
+							System.out.print("GRASSY  PLAIN|");
+						}else if (c == 1 & line == 1 & b == 0) {
+							System.out.print(" RIVER CROSS |");
+						}else if (c == 1 & line == 1 & b == 4) {
+							System.out.print(" NEED  SHELL |");
+						}else if (c == 1 & line == 2 & b == 0) {
+							System.out.print("ENCHANT WOODS|");
+						}else if (c == 1 & line == 2 & b == 4) {
+							System.out.print("(START POINT)|");
+						}else if (c == 2 & line == 2 & b == 0) {
+							System.out.print("FOREST  TRAIL|");
+						}else if (c == 2 & line == 2 & b == 4) {
+							System.out.print("   BEAR!!!   |");
+						}else if (c == 2 & line == 3 & b == 0) {
+							System.out.print("   COTTAGE   |");
+						}else if (c == 2 & line == 3 & b == 4) {
+							System.out.print(" ITEM: SWORD |");
+						}else if (c == 2 & line == 4 & b == 0) {
+							System.out.print(" ROCKY  PATH |");
+						}else if (c == 1 & line == 4 & b == 0) {
+							System.out.print(" LAKE  SHORE |");
+						}else if (c == 1 & line == 4 & b == 4) {
+							System.out.print(" ITEM: SHELL |");
+						}else if (c == 3 & line == 4 & b == 0) {
+							System.out.print("MOUNTAINRANGE|");
+						}else if (c == 3 & line == 4 & b == 4) {
+							System.out.print(" IMPASSABLE! |");
+						}else{						
 						System.out.print("             |");
+						}
 					}
 				}
 			}					
@@ -68,7 +119,37 @@ public class main {
 	}
 	
 	public static void navigationPannel() {
-		System.out.println("setreprintMAP=" + setreprintMAP);	//DEBUG USE
+		String shellGet, campGet, swordGet;
+		if (myBag[0]==1) {
+			shellGet = "You have it";			
+		}
+		else {
+			shellGet = "You haven't gotten";			
+		}
+		
+		if (myBag[1]==1) {
+			campGet = "You have it";			
+		}
+		else {
+			campGet = "You haven't gotten";			
+		}
+		
+		if (myBag[2]==1) {
+			swordGet = "You have it";			
+		}
+		else {
+			swordGet = "You haven't gotten";			
+		}
+		
+		System.out.println("\n-----------------------------------------------------");
+		System.out.println("                      My Bag");
+		System.out.println("-----------------------------------------------------");
+
+		System.out.println("ITEM: SHELL " + shellGet);
+		System.out.println("ITEM: SWORD " + swordGet);
+		System.out.println("ITEM: CAMP  " + campGet);
+		System.out.println("-----------------------------------------------------");
+		//System.out.println("setreprintMAP=" + setreprintMAP);	//DEBUG USE
         Scanner input=new Scanner(System.in);
         System.out.println("\nEnter 1 to North");
         System.out.println("Enter 2 to South");
@@ -125,4 +206,9 @@ public class main {
 		inputBuffer [3] = 0;
 		missionIndex.index(xReal,yReal,1);
 	}
+	
+	 public static int[] yourBag (int[] getBag) {
+		 myBag = getBag;
+		return myBag;
+	 }
 }
