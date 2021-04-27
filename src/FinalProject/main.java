@@ -178,6 +178,7 @@ public class main {
 		}
 		System.out.println("yReal=" + yReal);	//DEBUD USE
 		System.out.println("xReal=" + xReal);	//DEBUD USE
+		prohibitedArea.prohibitedArea(xReal, yReal);	//Block block, In DEBUG, Annotation this line.
 	}
 	
 	public static void getstatus (int userNotAllowGame, int reprintMAP) {
