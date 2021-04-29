@@ -6,7 +6,7 @@ public class lakeShore{
 	
 	public static void gamestart () {
 	    JOptionPane.showMessageDialog(null,"Hello, Welcome to this lake shore! \nThere are many shells here."); 
-	    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want pick it up? \nSword will increase your attack power¡£","Permission",JOptionPane.YES_NO_OPTION);
+	    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want pick it up? \nShells will increase your attack power.","Permission",JOptionPane.YES_NO_OPTION);
 		if (userFeedback == 0) {
 			Inventory.bag(0, 0, 1);
 			System.out.println("\nGreat. You got it.");
