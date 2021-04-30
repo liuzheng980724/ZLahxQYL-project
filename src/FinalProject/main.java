@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class main {
 	
-	 private static boolean youWin = false;
+	 static boolean youWin = false;
 	 static int maploadDone = 0;
 	 static int xReal=0;
 	 static int yReal=0;
@@ -150,32 +150,36 @@ public class main {
 		System.out.println("ITEM: CAMP  " + campGet);
 		System.out.println("-----------------------------------------------------");
 		//System.out.println("setreprintMAP=" + setreprintMAP);	//DEBUG USE
-        Scanner input=new Scanner(System.in);
-        System.out.println("\nEnter 1 to North");
-        System.out.println("Enter 2 to South");
-        System.out.println("Enter 3 to West");
-        System.out.println("Enter 4 to East");
-        System.out.println("INPUT YOUR CHOOSE:");
-        int userInput = input.nextInt();
-        int navigation = userInput;
-        switch (navigation) {
-		case 1:
-			yReal--;
-			inputBuffer[0] = 1;
-			break;
-		case 2:
-			yReal++;
-			inputBuffer[1] = 1;
-			break;
-		case 3:
-			xReal--;
-			inputBuffer[2] = 1;
-			break;
-		case 4:
-			xReal++;
-			inputBuffer[3] = 1;
-			break;
-		}
+        if (youWin == false) {
+        	Scanner input=new Scanner(System.in);
+        	System.out.println("\nEnter 1 to North");
+        	System.out.println("Enter 2 to South");
+        	System.out.println("Enter 3 to West");
+        	System.out.println("Enter 4 to East");
+        	System.out.println("INPUT YOUR CHOOSE:");
+
+            int userInput = input.nextInt();
+            int navigation = userInput;    	
+
+            switch (navigation) {
+        	case 1:
+				yReal--;
+				inputBuffer[0] = 1;
+				break;
+			case 2:
+				yReal++;
+				inputBuffer[1] = 1;
+				break;
+			case 3:
+				xReal--;
+				inputBuffer[2] = 1;
+				break;
+			case 4:
+				xReal++;
+				inputBuffer[3] = 1;
+				break;
+			}
+        }
 		System.out.println("yReal=" + yReal);	//DEBUD USE
 		System.out.println("xReal=" + xReal);	//DEBUD USE
 		prohibitedArea.prohibitedArea(xReal, yReal);	//Block block, In DEBUG, Annotation this line.
@@ -213,8 +217,9 @@ public class main {
 		return myBag;
 	 }
 	 
-	 public static void gamesend() {
-	 
+	 public static boolean getwin (boolean getwin) {
+		 youWin = getwin;
+		return getwin;
 	 }
 }
 
