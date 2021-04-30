@@ -12,7 +12,7 @@ public class dragon {
 	static int myAttackPower;
 	static int [] myBag = {0,0,0};
 	
-	public static int gamestart () {
+	public static void gamestart () {
 	    JOptionPane.showMessageDialog(null,"Hello, warrior."); 
 	    JOptionPane.showMessageDialog(null,"You can't pass here."); 
 	    JOptionPane.showMessageDialog(null,"Now you will die here."); 
@@ -37,6 +37,7 @@ public class dragon {
 		}
 		if (dragonHP > myHP) {
 			JOptionPane.showMessageDialog(null,"You are died.");
+	    	JOptionPane.showMessageDialog(null,"Are you get the sword, it will help you. ");
 			myHP = 100;
 			dragonHP = 100;
 			missionIndex.index(0, 0, 2);
@@ -45,11 +46,27 @@ public class dragon {
 		    passGame = 1;
 		    statusCode.statusCode(1, 1);
 		}
+		}
 		
 
 		public static int creatdragonAttackPower () {
-			dragonAttackPower = new Random().nextInt(10) + 1;
+			dragonAttackPower = new Random().nextInt(10) + 6;
 			return dragonAttackPower;
 		}
+		
+		public static int creatMyAttackPower () {
+			if (myBag [2] == 1) {
+				myAttackPower = new Random().nextInt(10) + 1;
+				myAttackPower = myAttackPower + 10;
+			} else {
+				myAttackPower = new Random().nextInt(10) + 1;		
+			}
+			return myAttackPower;
+		}
+		
+		 public static int[] yourBag (int[] getBag) {
+			 myBag = getBag;
+			return myBag;
+		 }
 
 }

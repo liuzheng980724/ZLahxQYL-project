@@ -57,6 +57,26 @@ public class missionIndex {
 			}
 			}
 		}
+		if (xReal == 2 & yReal == 1 & reset == 0) {
+				System.out.println("\nStart transferring");
+				cobblestone.gamestart();
+		}
+		if (xReal == 1 & yReal == 1 & reset == 0) {
+			System.out.println("\nStart transferring");
+			cliff_edge.camp();
+		}
+		if (xReal == 3 & yReal == 1 & reset == 0) {
+			System.out.println("\nStart transferring");
+			dungeon.gamestart();
+		}
+		if (xReal == 4 & yReal == 1 & reset == 0) {
+			System.out.println("\nStart transferring");
+			dragon.gamestart();
+		}
+		if (xReal == 5 & yReal == 1 & reset == 0) {
+			System.out.println("\nStart transferring");
+			castle.gamesend();
+		}
 		System.out.println(userNotAllowGame); //DEBUD USE
 		backstatus();
 		return userNotAllowGame;
