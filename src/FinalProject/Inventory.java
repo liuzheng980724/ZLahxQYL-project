@@ -20,7 +20,7 @@ public class Inventory {
 	 }
 	 
 	 public static void returnBag () {
-		 	yourBag[0] = 1;	 //DEBUG USE
+		 	//yourBag[0] = 1;	 //DEBUG USE
 		 	//yourBag[1] = 1;	 //DEBUG USE
 		 	//yourBag[2] = 1;	 //DEBUG USE
 			riverCrossing.yourBag(yourBag);
