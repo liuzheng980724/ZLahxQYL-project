@@ -30,6 +30,7 @@ public class missionIndex {
 				userNotAllowGame = 1;
 			}
 		}
+		
 		if (xReal == 4 & yReal == 3 & reset == 0) {
 			if (clearStage [0] == 0) {
 			userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Forest Trail. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
@@ -69,13 +70,25 @@ public class missionIndex {
 			System.out.println("\nStart transferring");
 			dungeon.gamestart();
 		}
+		if (xReal == 3 & yReal == 5 & reset == 0) {
+			System.out.println("\nStart transferring");
+			lakeShore.gamestart();
+		}
 		if (xReal == 4 & yReal == 1 & reset == 0) {
 			System.out.println("\nStart transferring");
 			dragon.gamestart();
 		}
+		if (xReal == 4 & yReal == 5 & reset == 0) {
+			System.out.println("\nStart transferring");
+			rockPath.gamestart();
+		}
 		if (xReal == 5 & yReal == 1 & reset == 0) {
 			System.out.println("\nStart transferring");
 			castle.gamesend();
+		}
+		if (xReal == 5 & yReal == 5 & reset == 0) {
+			System.out.println("\nStart transferring");
+			mountainRange.gamestart();
 		}
 		System.out.println(userNotAllowGame); //DEBUD USE
 		backstatus();

@@ -2,11 +2,11 @@ package FinalProject;
 
 public class Inventory {
 	 static int [] yourBag = {0,0,0};
-	 static int getSheel = 0;
+	 static int getShell = 0;
 	 static int getCamp = 0;
 	 static int getSword = 0;
-	 public static int[] bag (int getSheel, int getCamp, int getSword) {
-		 if (getSheel == 1) {
+	 public static int[] bag (int getShell, int getCamp, int getSword) {
+		 if (getShell == 1) {
 			 yourBag[0] = 1;
 		 }
 		 if (getCamp == 1) {
