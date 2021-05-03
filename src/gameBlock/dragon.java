@@ -1,8 +1,12 @@
-package FinalProject;
+package gameBlock;
 
 import java.util.Random;
 
 import javax.swing.JOptionPane;
+
+import FinalProject.items;
+import FinalProject.missionIndex;
+import FinalProject.statusCode;
 
 public class dragon {
 	static int passGame = 0;
@@ -16,7 +20,7 @@ public class dragon {
 	    JOptionPane.showMessageDialog(null,"Hello, warrior."); 
 	    JOptionPane.showMessageDialog(null,"You can't pass here."); 
 	    JOptionPane.showMessageDialog(null,"Now you will die here."); 
-	    Inventory.returnBag();
+		myBag = items.yourBag;
 	    if (myBag [2] == 1) {
 	    	JOptionPane.showMessageDialog(null,"You have a sword, and your attack power is locked between 10 and 20. ");
 	    } else {
@@ -44,7 +48,7 @@ public class dragon {
 		}else if (myHP >= dragonHP) {
 		    JOptionPane.showMessageDialog(null,"You WIN the battle!"); 
 		    passGame = 1;
-		    statusCode.statusCode(1, 1);
+		    statusCode.statusCode(2, 1);
 		}
 		}
 		
@@ -63,10 +67,4 @@ public class dragon {
 			}
 			return myAttackPower;
 		}
-		
-		 public static int[] yourBag (int[] getBag) {
-			 myBag = getBag;
-			return myBag;
-		 }
-
 }

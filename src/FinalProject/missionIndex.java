@@ -2,21 +2,23 @@ package FinalProject;
 
 import javax.swing.JOptionPane;
 
+import gameBlock.*;
+
 public class missionIndex {
 	static int userFeedback;
 	public static int userNotAllowGame = 0;
-	public static int reprintMAP = 0;
 	public static int clearStage[] = {0,0};
 	public static int myBag[] = {0,0,0};
 	
 	public static int index(int xReal, int yReal, int reset) {
+		myBag = items.yourBag;
+		clearStage = statusCode.clearStage;
 		if (reset == 1) {
 			userNotAllowGame = 0;
 		}
 		if (reset == 2) {
 			System.out.println("\nTeleport back to the previous location.");
 			userNotAllowGame = 1;
-			backstatus();
 			return userNotAllowGame;
 		}
 		if (xReal == 3 & yReal == 2 & reset == 0) {
@@ -74,9 +76,11 @@ public class missionIndex {
 			System.out.println("\nStart transferring");
 			lakeShore.gamestart();
 		}
-		if (xReal == 4 & yReal == 1 & reset == 0) {
-			System.out.println("\nStart transferring");
-			dragon.gamestart();
+		if (clearStage [1] == 0) {
+			if (xReal == 4 & yReal == 1 & reset == 0) {
+				System.out.println("\nStart transferring");
+				dragon.gamestart();
+			}
 		}
 		if (xReal == 4 & yReal == 5 & reset == 0) {
 			System.out.println("\nStart transferring");
@@ -90,22 +94,8 @@ public class missionIndex {
 			System.out.println("\nStart transferring");
 			mountainRange.gamestart();
 		}
-		System.out.println(userNotAllowGame); //DEBUD USE
-		backstatus();
+		//System.out.println(userNotAllowGame); //DEBUD USE
 		return userNotAllowGame;
 	}
 	
-	public static void backstatus() {
-		main.getstatus(userNotAllowGame, reprintMAP);
-	}
-	
-	 public static int[] getClearStage (int[] getClearStage) {
-		 clearStage = getClearStage;
-		return clearStage;
-	 }
-	 
-	 public static int[] yourBag (int[] getBag) {
-		 myBag = getBag;
-		return myBag;
-	 }
 }

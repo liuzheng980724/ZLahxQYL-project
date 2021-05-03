@@ -1,13 +1,16 @@
-package FinalProject;
+package gameBlock;
 
 import javax.swing.JOptionPane;
+
+import FinalProject.items;
+import FinalProject.missionIndex;
 
 public class riverCrossing {
 	
 	static int [] myBag = {0,0,0};
 
 	public static void gamestart() {
-		Inventory.returnBag();
+		myBag = items.yourBag;
 		int userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! River Crossing. \nDo you want use boat to Cross the river?","Permission",JOptionPane.YES_NO_OPTION);
 		if (userFeedback == 0) {
 			System.out.println("\nGreat. Use boat we need you have shell.");
@@ -25,10 +28,4 @@ public class riverCrossing {
 			missionIndex.index(0, 0, 2);
 		}
 	}
-	
-	 public static int[] yourBag (int[] getBag) {
-		 myBag = getBag;
-		return myBag;
-	 }
-
 }

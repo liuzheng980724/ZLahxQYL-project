@@ -1,7 +1,11 @@
-package FinalProject;
+package gameBlock;
 
 import java.util.Random;
 import javax.swing.JOptionPane;
+
+import FinalProject.items;
+import FinalProject.missionIndex;
+import FinalProject.statusCode;
 
 public class forestTrail {
 	static int passGame = 0;
@@ -15,7 +19,7 @@ public class forestTrail {
 	    JOptionPane.showMessageDialog(null,"Hello, little boy."); 
 	    JOptionPane.showMessageDialog(null,"You interrupted my hibernation."); 
 	    JOptionPane.showMessageDialog(null,"Now i want to eat you。"); 
-	    Inventory.returnBag();
+		myBag = items.yourBag;
 	    if (myBag [2] == 1) {
 	    	JOptionPane.showMessageDialog(null,"You have a sword, and your attack power is locked between 10 and 20. ");
 	    } else {
@@ -61,10 +65,4 @@ public class forestTrail {
 		}
 		return myAttackPower;
 	}
-	
-	 public static int[] yourBag (int[] getBag) {
-		 myBag = getBag;
-		return myBag;
-	 }
-	
 }

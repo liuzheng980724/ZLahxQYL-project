@@ -12,11 +12,6 @@ public class statusCode {
 				clearStage [1] = 1;
 				System.out.println("Done Write.");
 		 }
-		 returnStage();
 		 return clearStage;
-	 }
-	 
-	 public static void returnStage () {
-		 missionIndex.getClearStage(clearStage);
 	 }
 }

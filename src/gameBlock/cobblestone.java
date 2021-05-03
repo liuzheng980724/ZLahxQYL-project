@@ -1,4 +1,4 @@
-package FinalProject;
+package gameBlock;
 
 import javax.swing.JOptionPane;
 

@@ -6,12 +6,11 @@ import javax.swing.JOptionPane;
 
 public class main {
 	
-	 static boolean youWin = false;
+	 public static boolean youWin = false;
 	 static int maploadDone = 0;
 	 static int xReal=0;
 	 static int yReal=0;
 	 static int setuserNotAllowGame = 0;
-	 static int setreprintMAP = 0;
 	 static int [] inputBuffer = {0,0,0,0};
 	 public static int myBag[] = {0,0,0};
 	 
@@ -28,6 +27,7 @@ public class main {
 	    	navigationPannel();
 	    }
     	JOptionPane.showMessageDialog(f,"Congratulations! ! you win! !"); 
+		System.out.println("Good Job!!");
 	}
 
 	public static int drawMap (int xReal, int yReal) {
@@ -119,6 +119,7 @@ public class main {
 	}
 	
 	public static void navigationPannel() {
+		myBag = items.yourBag;
 		String shellGet, campGet, swordGet;
 		if (myBag[0]==1) {
 			shellGet = "You have it";			
@@ -149,7 +150,6 @@ public class main {
 		System.out.println("ITEM: SWORD " + swordGet);
 		System.out.println("ITEM: CAMP  " + campGet);
 		System.out.println("-----------------------------------------------------");
-		//System.out.println("setreprintMAP=" + setreprintMAP);	//DEBUG USE
         if (youWin == false) {
         	Scanner input=new Scanner(System.in);
         	System.out.println("\nEnter 1 to North");
@@ -180,17 +180,13 @@ public class main {
 				break;
 			}
         }
-		System.out.println("yReal=" + yReal);	//DEBUD USE
-		System.out.println("xReal=" + xReal);	//DEBUD USE
+		//System.out.println("yReal=" + yReal);	//DEBUD USE
+		//System.out.println("xReal=" + xReal);	//DEBUD USE
 		prohibitedArea.prohibitedArea(xReal, yReal);	//Block block, In DEBUG, Annotation this line.
 	}
 	
-	public static void getstatus (int userNotAllowGame, int reprintMAP) {
-		setuserNotAllowGame = userNotAllowGame;
-		setreprintMAP = reprintMAP;	
-	}
-	
 	public static void backPreviousPoint() {
+		setuserNotAllowGame=missionIndex.userNotAllowGame;
 		if (setuserNotAllowGame == 1) {	
 			if (inputBuffer[0] == 1) {
 				yReal++;
@@ -212,15 +208,6 @@ public class main {
 		missionIndex.index(xReal,yReal,1);
 	}
 	
-	 public static int[] yourBag (int[] getBag) {
-		 myBag = getBag;
-		return myBag;
-	 }
-	 
-	 public static boolean getwin (boolean getwin) {
-		 youWin = getwin;
-		return getwin;
-	 }
 }
 
 
