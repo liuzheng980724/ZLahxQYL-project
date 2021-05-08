@@ -18,13 +18,13 @@ public class dungeon {
 		}
 		else {
 			System.out.println("\nHey. We cannot find your camp. We cannont help you.");
-			missionIndex.index(0, 0, 2);
+			missionIndex.missionIndex(0, 0, 2);
 		}
 	}
 	else {
 		System.out.println("\nOkay, respect your choice.");	
 		System.out.println("See you next time.");	
-		missionIndex.index(0, 0, 2);
+		missionIndex.missionIndex(0, 0, 2);
 	}
 	}
  }

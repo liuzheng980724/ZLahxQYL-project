@@ -44,7 +44,7 @@ public class dragon {
 	    	JOptionPane.showMessageDialog(null,"Are you get the sword, it will help you. ");
 			myHP = 100;
 			dragonHP = 100;
-			missionIndex.index(0, 0, 2);
+			missionIndex.missionIndex(0, 0, 2);
 		}else if (myHP >= dragonHP) {
 		    JOptionPane.showMessageDialog(null,"You WIN the battle!"); 
 		    passGame = 1;

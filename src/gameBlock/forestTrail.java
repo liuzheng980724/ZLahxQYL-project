@@ -42,7 +42,7 @@ public class forestTrail {
 			JOptionPane.showMessageDialog(null,"You are died.");
 			myHP = 100;
 			bearHP = 100;
-			missionIndex.index(0, 0, 2);
+			missionIndex.missionIndex(0, 0, 2);
 		}else if (myHP >= bearHP) {
 		    JOptionPane.showMessageDialog(null,"You WIN the battle!"); 
 		    passGame = 1;

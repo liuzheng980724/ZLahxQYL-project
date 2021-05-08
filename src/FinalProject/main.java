@@ -21,7 +21,7 @@ public class main {
 	    JOptionPane.showMessageDialog(f,"Hello, Let's Start the Game."); 
 	    JOptionPane.showMessageDialog(f,"The game has started, now please pay attention to the map output from the console."); 
 	    while (youWin == false) {
-	    	missionIndex.index(xReal, yReal, 0);
+	    	missionIndex.missionIndex(xReal, yReal, 0);
 	    	backPreviousPoint();
 	    	drawMap(xReal,yReal);
 	    	navigationPannel();
@@ -205,7 +205,7 @@ public class main {
 		inputBuffer [1] = 0;
 		inputBuffer [2] = 0;
 		inputBuffer [3] = 0;
-		missionIndex.index(xReal,yReal,1);
+		missionIndex.missionIndex(xReal,yReal,1);
 	}
 	
 }
