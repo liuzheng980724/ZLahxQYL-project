@@ -11,6 +11,7 @@ public class main {
 	 static int xReal=0;
 	 static int yReal=0;
 	 static int setuserNotAllowGame = 0;
+	 public static int hp=100;
 	 static int [] inputBuffer = {0,0,0,0};
 	 public static int myBag[] = {0,0,0};
 	 
@@ -142,14 +143,25 @@ public class main {
 			swordGet = "You haven't gotten";			
 		}
 		
-		System.out.println("\n-----------------------------------------------------");
-		System.out.println("                      My Bag");
-		System.out.println("-----------------------------------------------------");
-
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("                           My Bag");
+		System.out.println("-----------------------------------------------------------");
 		System.out.println("ITEM: SHELL " + shellGet);
 		System.out.println("ITEM: SWORD " + swordGet);
 		System.out.println("ITEM: CAMP  " + campGet);
-		System.out.println("-----------------------------------------------------");
+		System.out.println("-----------------------------------------------------------");
+		System.out.print("HP: ");
+		System.out.print("|");
+		int drawHp = hp/2;
+		for (int hpPrint=0;hpPrint<drawHp;hpPrint++) {
+			System.out.print("#");
+		}
+		for (int emptySpace=0; emptySpace<50-drawHp; emptySpace++) {
+			System.out.print(" ");
+		}
+		System.out.print("|");
+		System.out.println(hp);
+		System.out.println("-----------------------------------------------------------");
         if (youWin == false) {
         	Scanner input=new Scanner(System.in);
         	System.out.println("\nEnter 1 to North");
@@ -206,6 +218,14 @@ public class main {
 		inputBuffer [2] = 0;
 		inputBuffer [3] = 0;
 		missionIndex.missionIndex(xReal,yReal,1);
+	}
+	
+	public static void refreshHP(int nowHP) {
+		if (nowHP >= 0) {
+			hp = nowHP;
+		} else {
+			hp = 0;
+		}
 	}
 	
 }

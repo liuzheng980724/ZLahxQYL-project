@@ -5,13 +5,14 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 import FinalProject.items;
+import FinalProject.main;
 import FinalProject.missionIndex;
 import FinalProject.statusCode;
 
 public class dragon {
 	static int passGame = 0;
 	static int dragonHP = 100;
-	static int myHP = 100;
+	static int hp;
 	static int dragonAttackPower;
 	static int myAttackPower;
 	static int [] myBag = {0,0,0};
@@ -20,7 +21,8 @@ public class dragon {
 	    JOptionPane.showMessageDialog(null,"Hello, warrior."); 
 	    JOptionPane.showMessageDialog(null,"You can't pass here."); 
 	    JOptionPane.showMessageDialog(null,"Now you will die here."); 
-		myBag = items.yourBag;
+	    hp = main.hp;
+	    myBag = items.yourBag;
 	    if (myBag [2] == 1) {
 	    	JOptionPane.showMessageDialog(null,"You have a sword, and your attack power is locked between 10 and 20. ");
 	    } else {
@@ -28,26 +30,27 @@ public class dragon {
 	    }
 		System.out.println("\nYou are in battle.");
 		System.out.println("\nPlease Wait...");
-		while (dragonHP > 0 & myHP > 0) {
+		while (dragonHP > 0 & hp > 0) {
 			creatdragonAttackPower();
 			creatMyAttackPower();
 			System.out.println("In Battle");
 			dragonHP = dragonHP - myAttackPower;
-			myHP = myHP - dragonAttackPower;
+			hp = hp - dragonAttackPower;
 			System.out.println("dragonAttackPower " + dragonAttackPower);
 			System.out.println("myAttackPower " + myAttackPower);
 			System.out.println("dragonHP " + dragonHP);
-			System.out.println("myHP " + myHP);
+			System.out.println("myHP " + hp);
 		}
-		if (dragonHP > myHP) {
+		if (dragonHP > hp) {
 			JOptionPane.showMessageDialog(null,"You are died.");
 	    	JOptionPane.showMessageDialog(null,"Are you get the sword, it will help you. ");
-			myHP = 100;
 			dragonHP = 100;
+			main.refreshHP(hp);
 			missionIndex.missionIndex(0, 0, 2);
-		}else if (myHP >= dragonHP) {
+		}else if (hp >= dragonHP) {
 		    JOptionPane.showMessageDialog(null,"You WIN the battle!"); 
 		    passGame = 1;
+		    main.refreshHP(hp);
 		    statusCode.statusCode(2, 1);
 		}
 		}
