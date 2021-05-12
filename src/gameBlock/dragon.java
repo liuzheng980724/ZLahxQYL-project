@@ -51,7 +51,7 @@ public class dragon {
 		    JOptionPane.showMessageDialog(null,"You WIN the battle!\n You got a dragon egg."); 
 		    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want pick it up?","Permission",JOptionPane.YES_NO_OPTION);
 			if (userFeedback == 0) {
-				items.bag(0, 0, 0, 0, 1);
+				//items.bag(0, 0, 0, 0, 1);
 				System.out.println("\nGreat. You got it.");
 			} else {
 				System.out.println("\nOkay, you are welcome to come back and take me at any time.");
