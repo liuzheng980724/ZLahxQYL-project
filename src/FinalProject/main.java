@@ -14,6 +14,7 @@ public class main {
 	 public static int hp=100;
 	 static int [] inputBuffer = {0,0,0,0};
 	 public static int myBag[] = {0,0,0};
+	 static String npcChat;
 	 
 	public static void main (String[] args) {
 		xReal=3;
@@ -161,6 +162,26 @@ public class main {
 		}
 		System.out.print("|");
 		System.out.println(hp);
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("                        NPC chat box                       ");
+		npc.npc(xReal, yReal);
+		npcChat = npc.npcChat;
+		int chatlength = npcChat.length();
+		int repeatTime = chatlength/59;
+		int subStringStart = 0, subStringFinish = 0;
+		if (chatlength < 59) {
+			subStringFinish = chatlength;
+		} else {
+			subStringFinish = 59;
+		}
+		for (int i=0;i<repeatTime;i++) {
+			String temporary = npcChat.substring(subStringStart,subStringFinish);
+			System.out.println(temporary);
+			subStringStart = subStringStart + 59;
+			subStringFinish = subStringStart + 59;
+		}
+		String temporary2 = npcChat.substring(subStringStart);
+		System.out.println(temporary2);
 		System.out.println("-----------------------------------------------------------");
         if (youWin == false) {
         	Scanner input=new Scanner(System.in);
