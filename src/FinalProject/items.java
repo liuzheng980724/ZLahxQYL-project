@@ -6,6 +6,13 @@ public class items {
 	 static int getCamp = 0;
 	 static int getSword = 0;
 	 public static int[] bag (int getShell, int getCamp, int getSword, int getHerb) {
+		 if (getShell == 9 & getCamp ==9  & getSword == 9 & getHerb == 9) {
+			 yourBag[0] = 0;
+			 yourBag[1] = 0;
+			 yourBag[2] = 0;
+			 yourBag[3] = 0;
+		 }
+		 
 		 if (getShell == 1) {
 			 yourBag[0] = 1;
 		 }

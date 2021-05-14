@@ -48,6 +48,7 @@ public class dragon {
 			main.refreshHP(hp);
 			missionIndex.missionIndex(0, 0, 2);
 		}else if (hp >= dragonHP) {
+			dragonHP = 100;
 		    JOptionPane.showMessageDialog(null,"You WIN the battle!\n You got a dragon egg."); 
 		    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want pick it up?","Permission",JOptionPane.YES_NO_OPTION);
 			if (userFeedback == 0) {

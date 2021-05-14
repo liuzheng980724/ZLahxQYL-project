@@ -86,8 +86,10 @@ public class missionIndex {
 					
 					break;
 				case 5:
-					System.out.println("\nStart transferring");
-					lakeShore.gamestart();
+					if (myBag [0] == 0) {
+						System.out.println("\nStart transferring");
+						lakeShore.gamestart();
+					}
 					break;
 				}
 				break;
@@ -131,8 +133,10 @@ public class missionIndex {
 					}
 					break;
 				case 5:
-					System.out.println("\nStart transferring");
-					rockPath.gamestart();
+					if (myBag [3] == 0) {
+						System.out.println("\nStart transferring");
+						rockPath.gamestart();	
+					}
 					break;
 				}
 				break;

@@ -45,6 +45,7 @@ public class forestTrail {
 			missionIndex.missionIndex(0, 0, 2);
 		}else if (hp >= bearHP) {
 		    JOptionPane.showMessageDialog(null,"You WIN the battle!"); 
+		    bearHP = 100;
 		    passGame = 1;
 		    main.refreshHP(hp);
 		    statusCode.statusCode(1, 1);

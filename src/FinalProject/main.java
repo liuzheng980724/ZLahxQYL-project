@@ -34,6 +34,7 @@ public class main {
 			if (userInput == 1) {
 				xReal=3;
 				yReal=3;
+				hp = 100;
 				failure = false;
 				JOptionPane.showMessageDialog(f,"Let's Start the Game.\nThe game has started, now please pay attention to the map output from the console."); 
 				inGame();
@@ -139,6 +140,8 @@ public class main {
 							System.out.print(" LAKE  SHORE |");
 						}else if (c == 1 & line == 4 & b == 4) {
 							System.out.print(" ITEM: SHELL |");
+						}else if (c == 2 & line == 4 & b == 4) {
+							System.out.print(" ITEM:  HERB |");
 						}else if (c == 3 & line == 4 & b == 0) {
 							System.out.print("MOUNTAINRANGE|");
 						}else if (c == 3 & line == 4 & b == 4) {
@@ -160,7 +163,7 @@ public class main {
 	
 	public static void navigationPannel() {
 		myBag = items.yourBag;
-		String shellGet, campGet, swordGet;
+		String shellGet, campGet, swordGet, herbGet;
 		if (myBag[0]==1) {
 			shellGet = "You have it";			
 		}
@@ -182,11 +185,19 @@ public class main {
 			swordGet = "You haven't gotten";			
 		}
 		
+		if (myBag[3]==1) {
+			herbGet = "You have it";			
+		}
+		else {
+			herbGet = "You haven't gotten";			
+		}
+		
 		System.out.println("\n-----------------------------------------------------------");
 		System.out.println("                           My Bag");
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("ITEM: SHELL " + shellGet);
 		System.out.println("ITEM: SWORD " + swordGet);
+		System.out.println("ITEM: Herb  " + herbGet);
 		System.out.println("ITEM: CAMP  " + campGet);
 		System.out.println("-----------------------------------------------------------");
 		System.out.print("HP: ");
@@ -227,6 +238,9 @@ public class main {
         	System.out.println("Enter 2 to South");
         	System.out.println("Enter 3 to West");
         	System.out.println("Enter 4 to East");
+        	if (myBag[3]==1) {
+            	System.out.println("Enter 5 to use Herb. Make HP up tp 100");
+        	}
         	System.out.println("INPUT YOUR CHOOSE:");
 
             int userInput = input.nextInt();
@@ -249,10 +263,13 @@ public class main {
 				xReal++;
 				inputBuffer[3] = 1;
 				break;
+			case 5:
+				if (myBag[3]==1) {
+					hp = 100;
+				}
+				break;
 			}
         }
-		//System.out.println("yReal=" + yReal);	//DEBUD USE
-		//System.out.println("xReal=" + xReal);	//DEBUD USE
 		prohibitedArea.prohibitedArea(xReal, yReal);	//Block block, In DEBUG, Annotation this line.
 	}
 	
@@ -287,6 +304,8 @@ public class main {
 		} else {
 			hp = 0;
 			failure = true;
+			statusCode.statusCode(9, 9); //reset stage
+			items.bag(9, 9, 9, 9);		//reset all items
 		}
 	}
 	
