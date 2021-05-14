@@ -17,9 +17,7 @@ public class forestTrail {
 	static int [] myBag = {0,0,0};
 	
 	public static int gamestart () {
-	    JOptionPane.showMessageDialog(null,"Hello, little boy."); 
-	    JOptionPane.showMessageDialog(null,"You interrupted my hibernation."); 
-	    JOptionPane.showMessageDialog(null,"Now i want to eat you。"); 
+	    JOptionPane.showMessageDialog(null,"Hello, little boy.\nYou interrupted my hibernation.\nNow i want to eat you。"); 
 	    hp = main.hp;
 		myBag = items.yourBag;
 	    if (myBag [2] == 1) {

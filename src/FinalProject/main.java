@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 public class main {
 	
 	 public static boolean youWin = false;
+	 public static boolean failure = true;
 	 static int maploadDone = 0;
 	 static int xReal=0;
 	 static int yReal=0;
@@ -17,21 +18,58 @@ public class main {
 	 static String npcChat;
 	 
 	public static void main (String[] args) {
-		xReal=3;
-		yReal=3;
-	    JFrame f = new JFrame();
-	    JOptionPane.showMessageDialog(f,"Hello, Let's Start the Game."); 
-	    JOptionPane.showMessageDialog(f,"The game has started, now please pay attention to the map output from the console."); 
-	    while (youWin == false) {
-	    	missionIndex.missionIndex(xReal, yReal, 0);
-	    	backPreviousPoint();
-	    	drawMap(xReal,yReal);
-	    	navigationPannel();
-	    }
-    	JOptionPane.showMessageDialog(f,"Congratulations! ! you win! !"); 
-		System.out.println("Good Job!!");
-	}
+		JFrame f = new JFrame();
+		Scanner getUser = new Scanner(System.in); 
+		
+		while (failure == true) {
+			System.out.println("-----------------------------------------------------------");
+			System.out.println("                 Welcome ZLahxQYL Game!!!!");  
+			System.out.println("-----------------------------------------------------------");
+			System.out.println("Are You Ready?");
+			System.out.println("1. Start Game!");
+			System.out.println("2. Log Out!");
+			System.out.println("-----------------------------------------------------------");
+			System.out.println("INPUT YOUR CHOOSE:");
+			int userInput = getUser.nextInt();
+			if (userInput == 1) {
+				xReal=3;
+				yReal=3;
+				failure = false;
+				JOptionPane.showMessageDialog(f,"Let's Start the Game.\nThe game has started, now please pay attention to the map output from the console."); 
+				inGame();
+			} else {
+				failure = false;
+			}
+		}
+		
+		if (youWin == true) {
+	    	JOptionPane.showMessageDialog(f,"Congratulations! ! you win! !"); 
+			System.out.println("Good Job!!");
+		}
 
+		JOptionPane.showMessageDialog(f,"See You! !"); 
+		System.out.println("BYE BYE");
+		System.exit(0);
+	}
+	
+	public static void inGame() {
+	    while (youWin == false & failure == false) {
+	    	if (failure == false) {
+		    	missionIndex.missionIndex(xReal, yReal, 0);
+		    	backPreviousPoint();
+		    	drawMap(xReal,yReal);
+		    	navigationPannel();
+	    	} else {
+		    	JOptionPane.showMessageDialog(null,"You are DIE!!!\nYou will back Game Center, now."); 
+	    	}
+
+	    }
+	    
+	    if (failure == true) {
+	    	JOptionPane.showMessageDialog(null,"You are DIE!!!\nYou will back Game Center, now."); 
+	    }
+	}
+	
 	public static int drawMap (int xReal, int yReal) {
 		int gridFinal = 5;
 		int totalLine = 5;
@@ -183,7 +221,7 @@ public class main {
 		String temporary2 = npcChat.substring(subStringStart);
 		System.out.println(temporary2);
 		System.out.println("-----------------------------------------------------------");
-        if (youWin == false) {
+        if (youWin == false & failure == false) {
         	Scanner input=new Scanner(System.in);
         	System.out.println("\nEnter 1 to North");
         	System.out.println("Enter 2 to South");
@@ -238,7 +276,9 @@ public class main {
 		inputBuffer [1] = 0;
 		inputBuffer [2] = 0;
 		inputBuffer [3] = 0;
-		missionIndex.missionIndex(xReal,yReal,1);
+		if (failure == false) {
+			missionIndex.missionIndex(xReal,yReal,1);
+		}
 	}
 	
 	public static void refreshHP(int nowHP) {
@@ -246,6 +286,7 @@ public class main {
 			hp = nowHP;
 		} else {
 			hp = 0;
+			failure = true;
 		}
 	}
 	
