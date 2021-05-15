@@ -15,7 +15,7 @@ public class dragon {
 	static int hp;
 	static int dragonAttackPower;
 	static int myAttackPower;
-	static int [] myBag = {0,0,0};
+	static int [] myBag = {0,0,0,0,0};
 	
 	public static void gamestart () {
 	    JOptionPane.showMessageDialog(null,"Hello, warrior."); 
@@ -52,7 +52,7 @@ public class dragon {
 		    JOptionPane.showMessageDialog(null,"You WIN the battle!\n You got a dragon egg."); 
 		    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want pick it up?","Permission",JOptionPane.YES_NO_OPTION);
 			if (userFeedback == 0) {
-				//items.bag(0, 0, 0, 0, 1);
+				items.bag(0, 0, 0, 0, 1);
 				System.out.println("\nGreat. You got it.");
 			} else {
 				System.out.println("\nOkay, you are welcome to come back and take me at any time.");
@@ -60,16 +60,9 @@ public class dragon {
 		    passGame = 1;
 		    main.refreshHP(hp);
 		    statusCode.statusCode(2, 1);
-		    
-		    
-			 
-			    
-				
-		
-		}
+		    }
 		}
 		
-
 		public static int creatdragonAttackPower () {
 			dragonAttackPower = new Random().nextInt(10) + 6;
 			return dragonAttackPower;

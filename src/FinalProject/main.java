@@ -14,7 +14,7 @@ public class main {
 	 static int setuserNotAllowGame = 0;
 	 public static int hp=100;
 	 static int [] inputBuffer = {0,0,0,0};
-	 public static int myBag[] = {0,0,0};
+	 public static int myBag[] = {0,0,0,0,0};
 	 static String npcChat;
 	 
 	public static void main (String[] args) {
@@ -163,7 +163,7 @@ public class main {
 	
 	public static void navigationPannel() {
 		myBag = items.yourBag;
-		String shellGet, campGet, swordGet, herbGet;
+		String shellGet, campGet, swordGet, herbGet, eggGet;
 		if (myBag[0]==1) {
 			shellGet = "You have it";			
 		}
@@ -192,13 +192,21 @@ public class main {
 			herbGet = "You haven't gotten";			
 		}
 		
+		if (myBag[4]==1) {
+			eggGet = "You have it";			
+		}
+		else {
+			eggGet = "You haven't gotten";			
+		}
+		
 		System.out.println("\n-----------------------------------------------------------");
 		System.out.println("                           My Bag");
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("ITEM: SHELL " + shellGet);
 		System.out.println("ITEM: SWORD " + swordGet);
-		System.out.println("ITEM: Herb  " + herbGet);
+		System.out.println("ITEM: HERB  " + herbGet);
 		System.out.println("ITEM: CAMP  " + campGet);
+		System.out.println("ITEM: EGG   " + eggGet);
 		System.out.println("-----------------------------------------------------------");
 		System.out.print("HP: ");
 		System.out.print("|");
@@ -305,7 +313,7 @@ public class main {
 			hp = 0;
 			failure = true;
 			statusCode.statusCode(9, 9); //reset stage
-			items.bag(9, 9, 9, 9);		//reset all items
+			items.bag(9, 9, 9, 9, 9);		//reset all items
 		}
 	}
 	

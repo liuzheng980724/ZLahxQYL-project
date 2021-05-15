@@ -14,7 +14,7 @@ public class forestTrail {
 	static int bearAttackPower;
 	static int myAttackPower;
 	static int hp;
-	static int [] myBag = {0,0,0};
+	static int [] myBag = {0,0,0,0,0};
 	
 	public static int gamestart () {
 	    JOptionPane.showMessageDialog(null,"Hello, little boy.\nYou interrupted my hibernation.\nNow i want to eat you。"); 

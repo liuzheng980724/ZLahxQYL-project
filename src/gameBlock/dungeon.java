@@ -6,7 +6,7 @@ import FinalProject.items;
 import FinalProject.missionIndex;
 
 public class dungeon {
-	static int [] myBag = {0,0,0};
+	static int [] myBag = {0,0,0,0,0};
 	
 	public static void gamestart () {
 	int userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Dark Dungeon. \nDo you want go inside?","Permission",JOptionPane.YES_NO_OPTION);

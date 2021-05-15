@@ -7,7 +7,7 @@ import FinalProject.missionIndex;
 
 public class riverCrossing {
 	
-	static int [] myBag = {0,0,0};
+	static int [] myBag = {0,0,0,0,0};
 
 	public static void gamestart() {
 		myBag = items.yourBag;
