@@ -7,7 +7,7 @@ public class npc {
 		int location = yreal*10 + xreal;
 		switch (location) {
 			case 11:
-				npcChat = "Thank you for believing in me! So I will give you a camp, and it will help you pass the next level. Remember to take it away.";
+				npcChat = "Thank you for believing in me! There is a camp for you, and it will help you pass the next level. Remember to take it away.";
 				break;
 			case 12:
 				npcChat = "Take this road with confidence, there is nothing here. The next level suggests that you choose the west side.";
@@ -16,19 +16,19 @@ public class npc {
 				npcChat = "You did not listen to my advice. So you can't pass this level, go back and get supplies. If you have already taken it, please don't skip a sentence. With a camp, you can spend the night safely in the tent.";
 				break;
 			case 14:
-				npcChat = "";
+				npcChat = "Hello, warrior. This is a very difficult level. No one has passed so far. But you can try it. Good luck! ";
 				break;
 			case 15:
-				npcChat = "";
+				npcChat = "Congratulations. You win! You are welcome to recommend this game to your friends.";
 				break;
 			case 22:
 				npcChat = "When you come to such a beautiful grassland, you can take a break. You don't need to do anything at this stage.";
 				break;
-			case 23:
+			case 32:
 				npcChat = "Do you want to cross the river? You can use shells to buy a boat to help you cross the river. If you can't cross the river, go find shells.";
 				break;
 			case 33:
-				npcChat = "Hello. I am your assistant and my name is siri. There are many tasks here. Are you ready to start? Sure...... I will remind you of each task. Have fun !!";
+				npcChat = "Hello. I am your assistant and my name is Siri. There are many tasks here. Are you ready to start? Sure...... I will remind you of each task. Have fun !!";
 				break;
 			case 34:
 				npcChat = "Welcome to the forest. There are a lot of wild animals and plants here. Unexpectedly there is a ferocious bear in front of you. You need to defeat it to enter the next level. Don't be discouraged if you fail, you can continue to try.";

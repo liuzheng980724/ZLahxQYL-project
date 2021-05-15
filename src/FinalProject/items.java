@@ -1,7 +1,7 @@
 package FinalProject;
 
 public class items {
-	 public static int [] yourBag = {0,0,0,0,0};
+	 public static int [] yourBag = {1,0,0,0,0};
 	 static int getShell = 0;
 	 static int getCamp = 0;
 	 static int getSword = 0;

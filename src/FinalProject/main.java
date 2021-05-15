@@ -10,10 +10,10 @@ public class main {
 	 public static boolean failure = true;
 	 static int maploadDone = 0;
 	 static int xReal=0;
-	 static int yReal=0;
+	 public static int yReal=0;
 	 static int setuserNotAllowGame = 0;
 	 public static int hp=100;
-	 static int [] inputBuffer = {0,0,0,0};
+	 public static int [] inputBuffer = {0,0,0,0};
 	 public static int myBag[] = {0,0,0,0,0};
 	 static String npcChat;
 	 
@@ -118,9 +118,9 @@ public class main {
 							System.out.print(" (WIN POINT) |");
 						}else if (c == 0 & line == 1 & b == 0) {
 							System.out.print("GRASSY  PLAIN|");
-						}else if (c == 1 & line == 1 & b == 0) {
+						}else if (c == 0 & line == 2 & b == 0) {
 							System.out.print(" RIVER CROSS |");
-						}else if (c == 1 & line == 1 & b == 4) {
+						}else if (c == 0 & line == 2 & b == 4) {
 							System.out.print(" NEED  SHELL |");
 						}else if (c == 1 & line == 2 & b == 0) {
 							System.out.print("ENCHANT WOODS|");
@@ -301,13 +301,13 @@ public class main {
 		inputBuffer [1] = 0;
 		inputBuffer [2] = 0;
 		inputBuffer [3] = 0;
-		if (failure == false) {
+		if (failure == false & setuserNotAllowGame == 1) {
 			missionIndex.missionIndex(xReal,yReal,1);
 		}
 	}
 	
 	public static void refreshHP(int nowHP) {
-		if (nowHP >= 0) {
+		if (nowHP > 0) {
 			hp = nowHP;
 		} else {
 			hp = 0;
