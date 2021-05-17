@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import FinalProject.items;
 import FinalProject.missionIndex;
+import FinalProject.reCheck;
 
 public class riverCrossing {
 	
@@ -11,6 +12,7 @@ public class riverCrossing {
 
 	public static void gamestart() {
 		myBag = items.yourBag;
+		reCheck.warning();
 		int userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! River Crossing. \nDo you want use boat to Cross the river?","Permission",JOptionPane.YES_NO_OPTION);
 		if (userFeedback == 0) {
 			System.out.println("\nGreat. Use boat we need you have shell.");
@@ -18,7 +20,8 @@ public class riverCrossing {
 				System.out.println("\nGreat. You have shell, now you can keep going.");
 			}
 			else {
-				System.out.println("\nHey. We cannot find you have shell. We cannont help you.");
+				System.out.println("\nHey. We cannot find you have shell. We cannont help you. You have to back now.");
+				new reCheck();
 				missionIndex.missionIndex(0, 0, 2);
 			}
 		}

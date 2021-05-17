@@ -61,12 +61,14 @@ public class main {
 		    	drawMap(xReal,yReal);
 		    	navigationPannel();
 	    	} else {
+	    		reCheck.warning();
 		    	JOptionPane.showMessageDialog(null,"You are DIE!!!\nYou will back Game Center, now."); 
 	    	}
 
 	    }
 	    
 	    if (failure == true) {
+	    	reCheck.warning();
 	    	JOptionPane.showMessageDialog(null,"You are DIE!!!\nYou will back Game Center, now."); 
 	    }
 	}
