@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class mountainRange {
 	
 	public static void gamestart () {
-	    JOptionPane.showMessageDialog(null,"Hello, You found a Mountain Range."); 
+		System.out.println("Hello, You found a Mountain Range."); 
 	    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want to challenge this Mountain Range? ","Permission",JOptionPane.YES_NO_OPTION);
 		if (userFeedback == 0) {
 			System.out.println("\nOkay, You can't climb this mountain because it is too high. ");
