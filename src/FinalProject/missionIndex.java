@@ -46,10 +46,6 @@ public class missionIndex {
 				System.out.println("\nStart transferring");
 				castle.gamesend();
 				break;
-			case 22:
-				System.out.println("\nStart transferring");
-				cobblestone.gamestart();
-				break;
 			case 32:
 				userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! River Crossing. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
 				if (userFeedback == 0) {

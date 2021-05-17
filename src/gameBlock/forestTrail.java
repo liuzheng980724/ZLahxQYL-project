@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import FinalProject.items;
 import FinalProject.main;
 import FinalProject.missionIndex;
+import FinalProject.reCheck;
 import FinalProject.statusCode;
 
 public class forestTrail {
@@ -17,16 +18,19 @@ public class forestTrail {
 	static int [] myBag = {0,0,0,0,0};
 	
 	public static int gamestart () {
-	    JOptionPane.showMessageDialog(null,"Hello, little boy.\nYou interrupted my hibernation.\nNow i want to eat you。"); 
+		System.out.println("Hello, little boy.\nYou interrupted my hibernation.\nNow i want to eat you。"); 
 	    hp = main.hp;
 		myBag = items.yourBag;
 	    if (myBag [2] == 1) {
-	    	JOptionPane.showMessageDialog(null,"You have a sword, and your attack power is locked between 10 and 20. ");
+	    	System.out.println("TIPS: You have a sword, and your attack power is locked between 10 and 20. ");
 	    } else {
-		    JOptionPane.showMessageDialog(null,"You don't have a sword, and your attack power is locked within 10. "); 
+	    	System.out.println("TIPS: You don't have a sword, and your attack power is locked within 10. "); 
 	    }
+        new reCheck();
 		System.out.println("\nYou are in battle.");
 		System.out.println("\nPlease Wait...");
+		System.out.println("bearHP " + bearHP);
+		System.out.println("myHP " + hp);
 		while (bearHP > 0 & hp > 0) {
 			creatBearAttackPower();
 			creatMyAttackPower();
@@ -39,12 +43,14 @@ public class forestTrail {
 			System.out.println("myHP " + hp);
 		}
 		if (bearHP > hp) {
+			reCheck.warning();
 			JOptionPane.showMessageDialog(null,"You are died.");
 			bearHP = 100;
 		    main.refreshHP(hp);
 			missionIndex.missionIndex(0, 0, 2);
 		}else if (hp >= bearHP) {
-		    JOptionPane.showMessageDialog(null,"You WIN the battle!"); 
+			reCheck.warning();
+			JOptionPane.showMessageDialog(null,"You are WIN!!");
 		    bearHP = 100;
 		    passGame = 1;
 		    main.refreshHP(hp);

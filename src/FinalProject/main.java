@@ -36,7 +36,7 @@ public class main {
 				yReal=3;
 				hp = 100;
 				failure = false;
-				JOptionPane.showMessageDialog(f,"Let's Start the Game.\nThe game has started, now please pay attention to the map output from the console."); 
+				System.out.println("Let's Start the Game.\nThe game has started, now please pay attention to the map output from the console."); 
 				inGame();
 			} else {
 				failure = false;
