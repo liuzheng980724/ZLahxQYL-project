@@ -16,40 +16,56 @@ public class dragon {
 	static int dragonAttackPower;
 	static int myAttackPower;
 	static int [] myBag = {0,0,0,0,0};
+	static int [] clearStage = {0,0};
 	
 	public static void gamestart () {
-	    JOptionPane.showMessageDialog(null,"Hello, warrior."); 
-	    JOptionPane.showMessageDialog(null,"You can't pass here."); 
-	    JOptionPane.showMessageDialog(null,"Now you will die here."); 
-	    hp = main.hp;
-	    myBag = items.yourBag;
-	    if (myBag [2] == 1) {
-	    	JOptionPane.showMessageDialog(null,"You have a sword, and your attack power is locked between 10 and 20. ");
-	    } else {
-		    JOptionPane.showMessageDialog(null,"You don't have a sword, and your attack power is locked within 10. "); 
-	    }
-		System.out.println("\nYou are in battle.");
-		System.out.println("\nPlease Wait...");
-		while (dragonHP > 0 & hp > 0) {
-			creatdragonAttackPower();
-			creatMyAttackPower();
-			System.out.println("In Battle");
-			dragonHP = dragonHP - myAttackPower;
-			hp = hp - dragonAttackPower;
-			System.out.println("dragonAttackPower " + dragonAttackPower);
-			System.out.println("myAttackPower " + myAttackPower);
-			System.out.println("dragonHP " + dragonHP);
-			System.out.println("myHP " + hp);
-		}
-		if (dragonHP > hp) {
-			JOptionPane.showMessageDialog(null,"You are died.");
-	    	JOptionPane.showMessageDialog(null,"Are you get the sword, it will help you. ");
-			dragonHP = 100;
-			main.refreshHP(hp);
-			missionIndex.missionIndex(0, 0, 2);
-		}else if (hp >= dragonHP) {
-			dragonHP = 100;
-		    JOptionPane.showMessageDialog(null,"You WIN the battle!\n You got a dragon egg."); 
+		clearStage = statusCode.clearStage;
+		if (clearStage[1] == 0) {
+		    JOptionPane.showMessageDialog(null,"Hello, warrior."); 
+		    JOptionPane.showMessageDialog(null,"You can't pass here."); 
+		    JOptionPane.showMessageDialog(null,"Now you will die here."); 
+		    hp = main.hp;
+		    myBag = items.yourBag;
+		    if (myBag [2] == 1) {
+		    	JOptionPane.showMessageDialog(null,"You have a sword, and your attack power is locked between 10 and 20. ");
+		    } else {
+			    JOptionPane.showMessageDialog(null,"You don't have a sword, and your attack power is locked within 10. "); 
+		    }
+			System.out.println("\nYou are in battle.");
+			System.out.println("\nPlease Wait...");
+			while (dragonHP > 0 & hp > 0) {
+				creatdragonAttackPower();
+				creatMyAttackPower();
+				System.out.println("In Battle");
+				dragonHP = dragonHP - myAttackPower;
+				hp = hp - dragonAttackPower;
+				System.out.println("dragonAttackPower " + dragonAttackPower);
+				System.out.println("myAttackPower " + myAttackPower);
+				System.out.println("dragonHP " + dragonHP);
+				System.out.println("myHP " + hp);
+			}
+			if (dragonHP > hp) {
+				JOptionPane.showMessageDialog(null,"You are died.");
+		    	JOptionPane.showMessageDialog(null,"Are you get the sword, it will help you. ");
+				dragonHP = 100;
+				main.refreshHP(hp);
+				missionIndex.missionIndex(0, 0, 2);
+			}else if (hp >= dragonHP) {
+				dragonHP = 100;
+			    JOptionPane.showMessageDialog(null,"You WIN the battle!\n You got a dragon egg."); 
+			    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want pick it up?","Permission",JOptionPane.YES_NO_OPTION);
+				if (userFeedback == 0) {
+					items.bag(0, 0, 0, 0, 1);
+					System.out.println("\nGreat. You got it.");
+				} else {
+					System.out.println("\nOkay, you are welcome to come back and take me at any time.");
+				}
+			    passGame = 1;
+			    main.refreshHP(hp);
+			    statusCode.statusCode(2, 1);
+			    }
+		} else if(clearStage[1] == 1) {
+			JOptionPane.showMessageDialog(null,"A dragon egg on the ground."); 
 		    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want pick it up?","Permission",JOptionPane.YES_NO_OPTION);
 			if (userFeedback == 0) {
 				items.bag(0, 0, 0, 0, 1);
@@ -57,10 +73,8 @@ public class dragon {
 			} else {
 				System.out.println("\nOkay, you are welcome to come back and take me at any time.");
 			}
-		    passGame = 1;
-		    main.refreshHP(hp);
-		    statusCode.statusCode(2, 1);
-		    }
+		}
+
 		}
 		
 		public static int creatdragonAttackPower () {

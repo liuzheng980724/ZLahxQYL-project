@@ -7,8 +7,8 @@ import gameBlock.*;
 public class missionIndex {
 	static int userFeedback;
 	public static int userNotAllowGame = 0;
-	public static int clearStage[] = {0,0};
-	public static int myBag[] = {0,0,0,0,0};
+	static int clearStage[] = {0,0};
+	static int myBag[] = {0,0,0,0,0};
 	
 	public static int missionIndex(int xReal, int yReal, int reset) {
 		myBag = items.yourBag;
@@ -35,7 +35,7 @@ public class missionIndex {
 				dungeon.gamestart();
 				break;
 			case 14:
-				if (clearStage [1] == 0) {
+				if (clearStage [1] == 0 || myBag[4] == 0) {
 					if (xReal == 4 & yReal == 1 & reset == 0) {
 						System.out.println("\nStart transferring");
 						dragon.gamestart();

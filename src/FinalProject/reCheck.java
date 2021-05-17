@@ -21,7 +21,7 @@ public class reCheck {
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("                          Warning!!");  
 		System.out.println("-----------------------------------------------------------");
-		System.out.println("Here we have a pop-up window. \nIf you don’t see that it may be blocked by other windows, \ntry to minimize other windows.\nYou will not allow to continue without closing the window.");
+		System.out.println("Here we have a pop-up window. \nIf you do not see that it may be blocked by other windows, \ntry to minimize other windows.\nYou will not allow to continue without closing the window.");
 		System.out.println("-----------------------------------------------------------");
 	}
 }

@@ -7,13 +7,13 @@ import javax.swing.JOptionPane;
 public class main {
 	
 	 public static boolean youWin = false;
-	 public static boolean failure = true;
+	 static boolean failure = true;
 	 static int xReal=0;
 	 static int yReal=0;
 	 static int setuserNotAllowGame = 0;
 	 public static int hp;
-	 public static int [] inputBuffer = {0,0,0,0};
-	 public static int myBag[] = {0,0,0,0,0};
+	 static int [] inputBuffer = {0,0,0,0};
+	 static int myBag[] = {0,0,0,0,0};
 	 static String npcChat;
 	 
 	public static void main (String[] args) {

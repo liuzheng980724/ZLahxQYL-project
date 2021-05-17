@@ -42,19 +42,19 @@ public class forestTrail {
 			System.out.println("bearHP " + bearHP);
 			System.out.println("myHP " + hp);
 		}
-		if (bearHP > hp) {
-			reCheck.warning();
-			JOptionPane.showMessageDialog(null,"You are died.");
-			bearHP = 100;
-		    main.refreshHP(hp);
-			missionIndex.missionIndex(0, 0, 2);
-		}else if (hp >= bearHP) {
+		if (hp >= bearHP & hp > 0) {
 			reCheck.warning();
 			JOptionPane.showMessageDialog(null,"You are WIN!!");
 		    bearHP = 100;
 		    passGame = 1;
 		    main.refreshHP(hp);
 		    statusCode.statusCode(1, 1);
+		} else {
+			reCheck.warning();
+			JOptionPane.showMessageDialog(null,"You are died.");
+			bearHP = 100;
+		    main.refreshHP(hp);
+			missionIndex.missionIndex(0, 0, 2);
 		}
 	return passGame;
 	}

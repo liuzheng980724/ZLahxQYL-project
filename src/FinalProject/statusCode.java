@@ -1,7 +1,7 @@
 package FinalProject;
 
 public class statusCode {
-	 static int [] clearStage = {0,0};
+	 public static int [] clearStage = {0,0};
 	 public static int[] statusCode (int stageNum, int passGame) {
 		 if (stageNum == 9 & passGame == 9) {
 			 clearStage [0] = 0;
