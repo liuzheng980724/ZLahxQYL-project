@@ -8,7 +8,7 @@ public class mountainRange {
 	
 	public static void gamestart () {
 		reCheck.warning();
-	    int userFeedback = JOptionPane.showConfirmDialog(null,"Hello, You found a Mountain Range./nDo you want to challenge this Mountain Range? ","Permission",JOptionPane.YES_NO_OPTION);
+	    int userFeedback = JOptionPane.showConfirmDialog(null,"Hello, You found a Mountain Range.\nDo you want to challenge this Mountain Range? ","Permission",JOptionPane.YES_NO_OPTION);
 		if (userFeedback == 0) {
 			System.out.println("\nOkay, You can't climb this mountain because it is too high. ");
 			System.out.println("\nWelcome to the next challenge.");

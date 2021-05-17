@@ -20,16 +20,18 @@ public class dragon {
 	static int [] clearStage = {0,0};
 	
 	public static void gamestart () {
-		reCheck.warning();
 		clearStage = statusCode.clearStage;
 		if (clearStage[1] == 0) {
+			reCheck.warning();
 		    JOptionPane.showMessageDialog(null,"Hello, warrior\nYou can't pass here\nNow you will die here."); 
 		    
 		    hp = main.hp;
 		    myBag = items.yourBag;
 		    if (myBag [2] == 1) {
+		    	reCheck.warning();
 		    	JOptionPane.showMessageDialog(null,"You have a sword, and your attack power is locked between 10 and 20. ");
 		    } else {
+		    	reCheck.warning();
 			    JOptionPane.showMessageDialog(null,"You don't have a sword, and your attack power is locked within 10. "); 
 		    }
 			System.out.println("\nYou are in battle\nPlease Wait...");
