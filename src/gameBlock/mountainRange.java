@@ -2,11 +2,13 @@ package gameBlock;
 
 import javax.swing.JOptionPane;
 
+import FinalProject.reCheck;
+
 public class mountainRange {
 	
 	public static void gamestart () {
-		System.out.println("Hello, You found a Mountain Range."); 
-	    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want to challenge this Mountain Range? ","Permission",JOptionPane.YES_NO_OPTION);
+		reCheck.warning();
+	    int userFeedback = JOptionPane.showConfirmDialog(null,"Hello, You found a Mountain Range./nDo you want to challenge this Mountain Range? ","Permission",JOptionPane.YES_NO_OPTION);
 		if (userFeedback == 0) {
 			System.out.println("\nOkay, You can't climb this mountain because it is too high. ");
 			System.out.println("\nWelcome to the next challenge.");
