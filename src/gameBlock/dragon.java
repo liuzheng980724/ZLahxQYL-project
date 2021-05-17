@@ -1,5 +1,11 @@
 package gameBlock;
 
+/**
+* Game Block: Dragon
+* @author Qiyuan Luo
+* @version 1.0
+*/
+
 import java.util.Random;
 
 import javax.swing.JOptionPane;

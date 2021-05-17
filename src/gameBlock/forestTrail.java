@@ -1,5 +1,11 @@
 package gameBlock;
 
+/**
+* Game Block: Forest Trail
+* @author Zheng Liu
+* @version 1.1
+*/
+
 import java.util.Random;
 import javax.swing.JOptionPane;
 

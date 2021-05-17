@@ -1,8 +1,12 @@
 package FinalProject;
 
-/*
- * NPC CHAT FILE
- */
+/**
+* ALL NPC CHAT LINE.
+* Change NPC Language/Words at here.
+* @author Zheng Liu
+* @version 1.0
+*/
+
 public class npc {
 	
 	static String npcChat;

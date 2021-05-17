@@ -1,5 +1,11 @@
 package gameBlock;
 
+/**
+* Game Block: Dundeon
+* @author Qiyuan Luo
+* @version 1.0
+*/
+
 import javax.swing.JOptionPane;
 
 import FinalProject.items;

@@ -1,8 +1,13 @@
 package FinalProject;
 
-/*
- * This is all game block INDEX file. NEED X Y
- */
+/**
+* Index File for all Block Game.
+* Accept the coordinates (X, Y) passed in from main.java and index them to the relevant game files.
+* Appropriate detection conditions to determine whether a game is needed.
+* @author Zheng Liu
+* @version 1.1
+*/
+
 import javax.swing.JOptionPane;
 
 import gameBlock.*;

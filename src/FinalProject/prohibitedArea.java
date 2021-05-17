@@ -1,8 +1,12 @@
 package FinalProject;
 
-/*
- * DO NOT GO ZONE
- */
+/**
+* DO NOT GOING ZONE.
+* According to the coordinates (X, Y)
+* @author Zheng Liu
+* @version 1.0
+*/
+
 import javax.swing.JOptionPane;
 
 public class prohibitedArea {

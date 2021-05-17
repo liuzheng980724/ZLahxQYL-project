@@ -1,8 +1,11 @@
 package gameBlock;
 
-/*
- * 
- */
+/**
+* Game Block: Castle
+* @author Qiyuan Luo
+* @version 1.0
+*/
+
 import FinalProject.main;
 import FinalProject.reCheck;
 

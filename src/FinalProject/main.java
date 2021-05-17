@@ -1,9 +1,12 @@
 package FinalProject;
 
-/*
- * Main File, RUN Project it here
- * Package GameBLOCK: all GAME file it here
- */
+/**
+* Main File. Run Project at here.
+* This File include Start game menu, Determine whether the game is over and clear the data, Show map, Display all items in the backpack and the console.
+* @author Zheng Liu
+* @version 1.1
+*/
+
 import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;

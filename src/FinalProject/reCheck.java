@@ -1,8 +1,13 @@
 package FinalProject;
 
-/*
- * SOME TIPS for JOPT
- */
+/**
+* NOT IMPORTANT TIPS.
+* Function: Enter Y to confirm to continue.
+* Function: Reminder popup.
+* @author Zheng Liu
+* @version 1.1
+*/
+
 import java.util.Scanner;
 
 public class reCheck {

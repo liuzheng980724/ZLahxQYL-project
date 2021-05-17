@@ -1,5 +1,11 @@
 package gameBlock;
 
+/**
+* Game Block: River Crossing
+* @author Zheng Liu
+* @version 1.1
+*/
+
 import javax.swing.JOptionPane;
 
 import FinalProject.items;

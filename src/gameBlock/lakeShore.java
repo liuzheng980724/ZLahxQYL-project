@@ -1,5 +1,11 @@
 package gameBlock;
 
+/**
+* Game Block: Lake Shore
+* @author Ao Hua Xu
+* @version 1.0
+*/
+
 import javax.swing.JOptionPane;
 
 import FinalProject.items;

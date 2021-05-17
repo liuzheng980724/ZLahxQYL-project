@@ -1,8 +1,11 @@
 package FinalProject;
 
-/*
- *  This is Inventory
- */
+/**
+* This is Inventory
+* @author Zheng Liu
+* @version 1.0
+*/
+
 public class items {
 	 public static int [] yourBag = {0,0,0,0,0}; //ALL ITEMS
 	 public static int[] items (int getShell, int getCamp, int getSword, int getHerb, int getEgg) {

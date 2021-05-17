@@ -1,8 +1,11 @@
 package FinalProject;
 
-/*
- * ALL STATUS OF STAGE
- */
+/**
+* Record whether the battle point needs to be cleared.
+* @author Zheng Liu
+* @version 1.0
+*/
+
 public class statusCode {
 	 public static int [] clearStage = {0,0};
 	 public static int[] statusCode (int stageNum, int passGame) {
