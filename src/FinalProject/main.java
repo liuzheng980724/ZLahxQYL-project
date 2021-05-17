@@ -8,11 +8,10 @@ public class main {
 	
 	 public static boolean youWin = false;
 	 public static boolean failure = true;
-	 static int maploadDone = 0;
 	 static int xReal=0;
-	 public static int yReal=0;
+	 static int yReal=0;
 	 static int setuserNotAllowGame = 0;
-	 public static int hp=100;
+	 public static int hp;
 	 public static int [] inputBuffer = {0,0,0,0};
 	 public static int myBag[] = {0,0,0,0,0};
 	 static String npcChat;
@@ -37,6 +36,7 @@ public class main {
 				hp = 100;
 				failure = false;
 				System.out.println("Let's Start the Game.\nThe game has started, now please pay attention to the map output from the console."); 
+				new reCheck();
 				inGame();
 			} else {
 				failure = false;
@@ -44,10 +44,11 @@ public class main {
 		}
 		
 		if (youWin == true) {
+			reCheck.warning();
 	    	JOptionPane.showMessageDialog(f,"Congratulations! ! you win! !"); 
 			System.out.println("Good Job!!");
 		}
-
+		reCheck.warning();
 		JOptionPane.showMessageDialog(f,"See You! !"); 
 		System.out.println("BYE BYE");
 		System.exit(0);
@@ -73,7 +74,7 @@ public class main {
 	    }
 	}
 	
-	public static int drawMap (int xReal, int yReal) {
+	public static void drawMap (int xReal, int yReal) {
 		int gridFinal = 5;
 		int totalLine = 5;
 		int haveDraw = 0;
@@ -160,7 +161,7 @@ public class main {
 				System.out.print("-------------|");
 			}		
 		}
-		return maploadDone = 1;
+
 	}
 	
 	public static void navigationPannel() {

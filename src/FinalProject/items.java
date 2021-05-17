@@ -2,9 +2,6 @@ package FinalProject;
 
 public class items {
 	 public static int [] yourBag = {0,0,0,0,0};
-	 static int getShell = 0;
-	 static int getCamp = 0;
-	 static int getSword = 0;
 	 public static int[] bag (int getShell, int getCamp, int getSword, int getHerb, int getEgg) {
 		 if (getShell == 9 & getCamp ==9  & getSword == 9 & getHerb == 9 & getEgg== 9) {
 			 yourBag[0] = 0;
