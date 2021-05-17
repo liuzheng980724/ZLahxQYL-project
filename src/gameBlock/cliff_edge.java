@@ -3,10 +3,12 @@ package gameBlock;
 import javax.swing.JOptionPane;
 
 import FinalProject.items;
+import FinalProject.reCheck;
 
 public class cliff_edge {
 	
 	public static void camp () {
+		reCheck.warning();
 	    JOptionPane.showMessageDialog(null,"Hello, You found a camp."); 
 	    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want pick it up? \nCamp may be helpful to you.","Permission",JOptionPane.YES_NO_OPTION);
 		if (userFeedback == 0) {

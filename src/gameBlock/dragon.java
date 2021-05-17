@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import FinalProject.items;
 import FinalProject.main;
 import FinalProject.missionIndex;
+import FinalProject.reCheck;
 import FinalProject.statusCode;
 
 public class dragon {
@@ -19,11 +20,11 @@ public class dragon {
 	static int [] clearStage = {0,0};
 	
 	public static void gamestart () {
+		reCheck.warning();
 		clearStage = statusCode.clearStage;
 		if (clearStage[1] == 0) {
-		    JOptionPane.showMessageDialog(null,"Hello, warrior."); 
-		    JOptionPane.showMessageDialog(null,"You can't pass here."); 
-		    JOptionPane.showMessageDialog(null,"Now you will die here."); 
+		    JOptionPane.showMessageDialog(null,"Hello, warrior\nYou can't pass here\nNow you will die here."); 
+		    
 		    hp = main.hp;
 		    myBag = items.yourBag;
 		    if (myBag [2] == 1) {
@@ -31,8 +32,8 @@ public class dragon {
 		    } else {
 			    JOptionPane.showMessageDialog(null,"You don't have a sword, and your attack power is locked within 10. "); 
 		    }
-			System.out.println("\nYou are in battle.");
-			System.out.println("\nPlease Wait...");
+			System.out.println("\nYou are in battle\nPlease Wait...");
+			
 			while (dragonHP > 0 & hp > 0) {
 				creatdragonAttackPower();
 				creatMyAttackPower();
@@ -45,8 +46,8 @@ public class dragon {
 				System.out.println("myHP " + hp);
 			}
 			if (dragonHP > hp) {
-				JOptionPane.showMessageDialog(null,"You are died.");
-		    	JOptionPane.showMessageDialog(null,"Are you get the sword, it will help you. ");
+				JOptionPane.showMessageDialog(null,"You are died\nAre you get the sword, it will help you.");
+		    	
 				dragonHP = 100;
 				main.refreshHP(hp);
 				missionIndex.missionIndex(0, 0, 2);

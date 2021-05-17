@@ -4,11 +4,13 @@ import javax.swing.JOptionPane;
 
 import FinalProject.items;
 import FinalProject.missionIndex;
+import FinalProject.reCheck;
 
 public class dungeon {
 	static int [] myBag = {0,0,0,0,0};
 	
 	public static void gamestart () {
+		reCheck.warning();
 	int userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Dark Dungeon. \nDo you want go inside?","Permission",JOptionPane.YES_NO_OPTION);
 	if (userFeedback == 0) {
 		myBag = items.yourBag;
@@ -18,12 +20,13 @@ public class dungeon {
 		}
 		else {
 			System.out.println("\nHey. We cannot find your camp. We cannont help you.");
+			new reCheck();
 			missionIndex.missionIndex(0, 0, 2);
 		}
 	}
 	else {
-		System.out.println("\nOkay, respect your choice.");	
-		System.out.println("See you next time.");	
+		System.out.println("\nOkay, respect your choice.\nSee you next time.");	
+			
 		missionIndex.missionIndex(0, 0, 2);
 	}
 	}
