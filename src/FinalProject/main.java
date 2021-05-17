@@ -1,5 +1,9 @@
 package FinalProject;
 
+/*
+ * Main File, RUN Project it here
+ * Package GameBLOCK: all GAME file it here
+ */
 import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -54,7 +58,7 @@ public class main {
 		System.exit(0);
 	}
 	
-	public static void inGame() {
+	public static void inGame() { //IN Game
 	    while (youWin == false & failure == false) {
 	    	if (failure == false) {
 		    	missionIndex.missionIndex(xReal, yReal, 0);
@@ -74,7 +78,7 @@ public class main {
 	    }
 	}
 	
-	public static void drawMap (int xReal, int yReal) {
+	public static void drawMap (int xReal, int yReal) {	//DRAW MAP
 		int gridFinal = 5;
 		int totalLine = 5;
 		int haveDraw = 0;
@@ -164,7 +168,7 @@ public class main {
 
 	}
 	
-	public static void navigationPannel() {
+	public static void navigationPannel() {	//Control Panel + Show Items
 		myBag = items.yourBag;
 		String shellGet, campGet, swordGet, herbGet, eggGet;
 		if (myBag[0]==1) {
@@ -284,7 +288,7 @@ public class main {
 		prohibitedArea.prohibitedArea(xReal, yReal);	//Block block, In DEBUG, Annotation this line.
 	}
 	
-	public static void backPreviousPoint() {
+	public static void backPreviousPoint() {	// IF GAME FILE NEED BACK PREVIOUS POINT FLAG: setuserNotAllowGame
 		setuserNotAllowGame=missionIndex.userNotAllowGame;
 		if (setuserNotAllowGame == 1) {	
 			if (inputBuffer[0] == 1) {
@@ -309,7 +313,7 @@ public class main {
 		}
 	}
 	
-	public static void refreshHP(int nowHP) {
+	public static void refreshHP(int nowHP) {	//REFRESH HH
 		if (nowHP > 0) {
 			hp = nowHP;
 		} else {

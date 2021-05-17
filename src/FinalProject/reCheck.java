@@ -1,5 +1,8 @@
 package FinalProject;
 
+/*
+ * SOME TIPS for JOPT
+ */
 import java.util.Scanner;
 
 public class reCheck {

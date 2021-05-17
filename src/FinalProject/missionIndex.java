@@ -1,5 +1,8 @@
 package FinalProject;
 
+/*
+ * This is all game block INDEX file. NEED X Y
+ */
 import javax.swing.JOptionPane;
 
 import gameBlock.*;

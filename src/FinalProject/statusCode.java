@@ -1,5 +1,8 @@
 package FinalProject;
 
+/*
+ * ALL STATUS OF STAGE
+ */
 public class statusCode {
 	 public static int [] clearStage = {0,0};
 	 public static int[] statusCode (int stageNum, int passGame) {

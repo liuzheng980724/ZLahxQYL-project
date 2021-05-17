@@ -1,7 +1,10 @@
 package FinalProject;
 
+/*
+ *  This is Inventory
+ */
 public class items {
-	 public static int [] yourBag = {0,0,0,0,0};
+	 public static int [] yourBag = {0,0,0,0,0}; //ALL ITEMS
 	 public static int[] bag (int getShell, int getCamp, int getSword, int getHerb, int getEgg) {
 		 if (getShell == 9 & getCamp ==9  & getSword == 9 & getHerb == 9 & getEgg== 9) {
 			 yourBag[0] = 0;

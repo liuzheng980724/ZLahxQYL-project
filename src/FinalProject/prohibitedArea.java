@@ -1,5 +1,8 @@
 package FinalProject;
 
+/*
+ * DO NOT GO ZONE
+ */
 import javax.swing.JOptionPane;
 
 public class prohibitedArea {

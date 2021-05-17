@@ -1,5 +1,8 @@
 package FinalProject;
 
+/*
+ * NPC CHAT FILE
+ */
 public class npc {
 	
 	static String npcChat;
