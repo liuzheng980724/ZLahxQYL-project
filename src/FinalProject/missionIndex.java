@@ -8,104 +8,102 @@ import javax.swing.JOptionPane;
 import gameBlock.*;
 
 public class missionIndex {
-	static int userFeedback;
-	public static int userNotAllowGame = 0;
-	static int clearStage[] = {0,0};
-	static int myBag[] = {0,0,0,0,0};
+	int userFeedback;
+	int clearStage[] = {0,0};
+	int myBag[] = {0,0,0,0,0};
 	
-	public static int missionIndex(int xReal, int yReal, int reset) {
+	public missionIndex(int xReal, int yReal, int reset) {
+		reCheck warning = new reCheck();
 		myBag = items.yourBag;
 		clearStage = statusCode.clearStage;
 		int location = yReal*10 + xReal;
 		if (reset == 1) {
-			userNotAllowGame = 0;
+			main.keepGoingORnot(0);
 		}
 		if (reset == 2) {
 			System.out.println("\nTeleport back to the previous location.");
-			userNotAllowGame = 1;
-			return userNotAllowGame;
+			main.keepGoingORnot(1);
 		}
 		
 		switch (location) {
 			case  11: 
 				if (myBag [1] == 0) {
 					System.out.println("\nStart transferring");
-					cliff_edge.camp();
+					new cliff_edge();
 				}
 				break;
 			case 13:
 				System.out.println("\nStart transferring");
-				dungeon.gamestart();
+				new dungeon();
 				break;
 			case 14:
 				if (clearStage [1] == 0 || myBag[4] == 0) {
 					if (xReal == 4 & yReal == 1 & reset == 0) {
 						System.out.println("\nStart transferring");
-						dragon.gamestart();
+						new dragon();
 					}
 				}
 				break;
 			case 15:
 				System.out.println("\nStart transferring");
-				castle.gamesend();
+				new castle();
 				break;
 			case 32:
-				reCheck.warning();
+				warning.warning();
 				userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! River Crossing. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
 				if (userFeedback == 0) {
 					System.out.println("\nStart transferring");
-					riverCrossing.gamestart();
+					new riverCrossing();
 				} else {
 					System.out.println("\nTeleport back to the previous location.");
-					userNotAllowGame = 1;
+					main.keepGoingORnot(1);
 				}
 				break;
 			case 34:
 				if (clearStage [0] == 0) {
-					reCheck.warning();
+					warning.warning();
 					userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Forest Trail. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
 					if (userFeedback == 0) {
 						System.out.println("\nStart transferring");
-						forestTrail.gamestart();
+						new forestTrail();
 					}
 					else {
 						System.out.println("\nTeleport back to the previous location.");
-						userNotAllowGame = 1;
+						main.keepGoingORnot(1);
 					}
 				}
 				break;
 			case 44:
 				if (myBag [2] == 0) {
-					reCheck.warning();
+					warning.warning();
 					userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Cottage. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
 					if (userFeedback == 0) {
 						System.out.println("\nStart transferring");
-						cottage.gamestart();
+						new cottage();
 					}
 					else {
 						System.out.println("\nTeleport back to the previous location.");
-						userNotAllowGame = 1;
+						main.keepGoingORnot(1);
 					}
 				}
 				break;
 			case 53:
 				if (myBag [0] == 0) {
 					System.out.println("\nStart transferring");
-					lakeShore.gamestart();
+					new lakeShore();
 				}
 				break;
 			case 54:
 				if (myBag [3] == 0) {
 					System.out.println("\nStart transferring");
-					rockPath.gamestart();	
+					new rockPath();	
 				}
 				break;
 			case 55:
 				System.out.println("\nStart transferring");
-				mountainRange.gamestart();
+				new mountainRange();
 				break;
 		}
-		return userNotAllowGame;
 	}
 	
 }

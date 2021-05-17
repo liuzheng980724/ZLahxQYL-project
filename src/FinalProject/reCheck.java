@@ -6,8 +6,12 @@ package FinalProject;
 import java.util.Scanner;
 
 public class reCheck {
-
-	public reCheck () {
+	
+	public reCheck() {
+		
+	}
+	
+	public void needYes () {
         while(true){
         	Scanner areYouReady = new Scanner(System.in); 
     		System.out.println("-----------------------------------------------------------");
@@ -20,7 +24,7 @@ public class reCheck {
         }
     }
    
-	public static void warning () {
+	public void warning () {
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("                          Warning!!");  
 		System.out.println("-----------------------------------------------------------");

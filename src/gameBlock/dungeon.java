@@ -7,10 +7,11 @@ import FinalProject.missionIndex;
 import FinalProject.reCheck;
 
 public class dungeon {
-	static int [] myBag = {0,0,0,0,0};
+	int [] myBag = {0,0,0,0,0};
 	
-	public static void gamestart () {
-		reCheck.warning();
+	public dungeon () {
+		reCheck warning = new reCheck();
+		warning.warning();
 	int userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Dark Dungeon. \nDo you want go inside?","Permission",JOptionPane.YES_NO_OPTION);
 	if (userFeedback == 0) {
 		myBag = items.yourBag;
@@ -20,14 +21,14 @@ public class dungeon {
 		}
 		else {
 			System.out.println("\nHey. We cannot find your camp. We cannont help you.");
-			new reCheck();
-			missionIndex.missionIndex(0, 0, 2);
+			warning.needYes();
+			new missionIndex(0, 0, 2);
 		}
 	}
 	else {
 		System.out.println("\nOkay, respect your choice.\nSee you next time.");	
 			
-		missionIndex.missionIndex(0, 0, 2);
+		new missionIndex(0, 0, 2);
 	}
 	}
  }

@@ -22,7 +22,8 @@ public class main {
 	 
 	public static void main (String[] args) {
 		JFrame f = new JFrame();
-		Scanner getUser = new Scanner(System.in); 
+		Scanner getUser = new Scanner(System.in);
+		reCheck warning = new reCheck();
 		
 		while (failure == true) {
 			System.out.println("-----------------------------------------------------------");
@@ -40,7 +41,7 @@ public class main {
 				hp = 100;
 				failure = false;
 				System.out.println("Let's Start the Game.\nThe game has started, now please pay attention to the map output from the console."); 
-				new reCheck();
+				warning.needYes();
 				inGame();
 			} else {
 				failure = false;
@@ -48,32 +49,33 @@ public class main {
 		}
 		
 		if (youWin == true) {
-			reCheck.warning();
+			warning.warning();
 	    	JOptionPane.showMessageDialog(f,"Congratulations! ! you win! !"); 
 			System.out.println("Good Job!!");
 		}
-		reCheck.warning();
+		warning.warning();
 		JOptionPane.showMessageDialog(f,"See You! !"); 
 		System.out.println("BYE BYE");
 		System.exit(0);
 	}
 	
 	public static void inGame() { //IN Game
+		reCheck warning = new reCheck();
 	    while (youWin == false & failure == false) {
 	    	if (failure == false) {
-		    	missionIndex.missionIndex(xReal, yReal, 0);
+	    		missionIndex mission1 = new missionIndex(xReal, yReal, 0);
 		    	backPreviousPoint();
 		    	drawMap(xReal,yReal);
 		    	navigationPannel();
 	    	} else {
-	    		reCheck.warning();
+	    		warning.warning();
 		    	JOptionPane.showMessageDialog(null,"You are DIE!!!\nYou will back Game Center, now."); 
 	    	}
 
 	    }
 	    
 	    if (failure == true) {
-	    	reCheck.warning();
+	    	warning.warning();
 	    	JOptionPane.showMessageDialog(null,"You are DIE!!!\nYou will back Game Center, now."); 
 	    }
 	}
@@ -169,7 +171,8 @@ public class main {
 	}
 	
 	public static void navigationPannel() {	//Control Panel + Show Items
-		myBag = items.yourBag;
+		items bag= new items();
+		myBag = bag.yourBag;
 		String shellGet, campGet, swordGet, herbGet, eggGet;
 		if (myBag[0]==1) {
 			shellGet = "You have it";			
@@ -289,7 +292,6 @@ public class main {
 	}
 	
 	public static void backPreviousPoint() {	// IF GAME FILE NEED BACK PREVIOUS POINT FLAG: setuserNotAllowGame
-		setuserNotAllowGame=missionIndex.userNotAllowGame;
 		if (setuserNotAllowGame == 1) {	
 			if (inputBuffer[0] == 1) {
 				yReal++;
@@ -309,18 +311,26 @@ public class main {
 		inputBuffer [2] = 0;
 		inputBuffer [3] = 0;
 		if (failure == false & setuserNotAllowGame == 1) {
-			missionIndex.missionIndex(xReal,yReal,1);
+			new missionIndex(xReal,yReal,1);
 		}
 	}
 	
-	public static void refreshHP(int nowHP) {	//REFRESH HH
+	public static void keepGoingORnot(int userNotAllowGame) {
+		if (userNotAllowGame == 1) {
+			setuserNotAllowGame = 1;
+		} else {
+			setuserNotAllowGame = 0;
+		}
+	}
+	
+	public static void refreshHP(int nowHP) {	//REFRESH HP
 		if (nowHP > 0) {
 			hp = nowHP;
 		} else {
 			hp = 0;
 			failure = true;
 			statusCode.statusCode(9, 9); //reset stage
-			items.bag(9, 9, 9, 9, 9);		//reset all items
+			items.items(9, 9, 9, 9, 9);		//reset all items
 		}
 	}
 	

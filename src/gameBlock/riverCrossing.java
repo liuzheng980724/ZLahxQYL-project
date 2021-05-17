@@ -8,11 +8,12 @@ import FinalProject.reCheck;
 
 public class riverCrossing {
 	
-	static int [] myBag = {0,0,0,0,0};
+	int [] myBag = {0,0,0,0,0};
 
-	public static void gamestart() {
+	public riverCrossing() {
+		reCheck warning = new reCheck();
 		myBag = items.yourBag;
-		reCheck.warning();
+		warning.warning();
 		int userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! River Crossing. \nDo you want use boat to Cross the river?","Permission",JOptionPane.YES_NO_OPTION);
 		if (userFeedback == 0) {
 			System.out.println("\nGreat. Use boat we need you have shell.");
@@ -21,14 +22,14 @@ public class riverCrossing {
 			}
 			else {
 				System.out.println("\nHey. We cannot find you have shell. We cannont help you. You have to back now.");
-				new reCheck();
-				missionIndex.missionIndex(0, 0, 2);
+				warning.needYes();
+				new missionIndex(0, 0, 2);
 			}
 		}
 		else {
 			System.out.println("\nOkay, respect your choice.");	
 			System.out.println("See you next time.");	
-			missionIndex.missionIndex(0, 0, 2);
+			new missionIndex(0, 0, 2);
 		}
 	}
 }
