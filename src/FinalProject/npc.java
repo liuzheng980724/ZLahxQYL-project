@@ -1,17 +1,25 @@
 package FinalProject;
 
 /**
-* NPC CHAT LINE.
+* ALL NPC CHAT BOX content at here.
+* NPC CHAT Content Provider: Ao Hua Xu
 * @author Zheng Liu
-* @version 1.0
+* @version 1.3
 */
 public class npc {
 	
-	static String npcChat;
-	static int clearStage[] = {0,0};
-	static int myBag[] = {0,0,0,0,0};
+	String npcChat;
+	int clearStage[] = {0,0};
+	int myBag[] = {0,0,0,0,0};
 	
-	public static String npc (int xreal, int yreal) {
+	   /**
+	   * This method is use to put the content that needs to be displayed into npcChat.
+	   * According to the coordinates of the current user to the correct Game Block.
+	   * @param xreal User coordinate X axis.
+	   * @param yreal User coordinate Y axis.
+	   * @return npcChat Where to output NPC prompt.
+	   */
+	public String npc (int xreal, int yreal) {
 		myBag = items.yourBag;
 		clearStage = statusCode.clearStage;
 		int location = yreal*10 + xreal;
@@ -91,6 +99,28 @@ public class npc {
 				break;
 		}
 		return npcChat;
+	}
+	
+	   /**
+	   * This method is Print the NPC CHAT.
+	   */
+	public void npcOutput() {
+		int chatlength = npcChat.length();
+		int repeatTime = chatlength/59;
+		int subStringStart = 0, subStringFinish = 0;
+		if (chatlength < 59) {
+			subStringFinish = chatlength;
+		} else {
+			subStringFinish = 59;
+		}
+		for (int i=0;i<repeatTime;i++) {
+			String temporary = npcChat.substring(subStringStart,subStringFinish);
+			System.out.println(temporary);
+			subStringStart = subStringStart + 59;
+			subStringFinish = subStringStart + 59;
+		}
+		String temporary2 = npcChat.substring(subStringStart);
+		System.out.println(temporary2);
 	}
 	
 }

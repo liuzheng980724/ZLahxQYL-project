@@ -27,7 +27,7 @@ public class main {
 	 static int myBag[] = {0,0,0,0,0};
 	 static String npcChat;
 	 
-	   /**
+	 /**
 	   * This method is main.
 	   * If not failure will in loop.
 	   * @param args Main Output.
@@ -71,11 +71,11 @@ public class main {
 		System.exit(0);
 	}
 	
-	   /**
-	   * This method is when you are in Game.
-	   * If fail you will go to main menu
-	   * If not will in loop (no result Like no WIN/Fail)
-	   */
+	/**
+	  * This method is when you are in Game.
+	  * If fail you will go to main menu
+	  * If not will in loop (no result Like no WIN/Fail)
+	  */
 	public static void inGame() { //IN Game
 		reCheck warning = new reCheck();
 	    while (youWin == false & failure == false) {
@@ -97,12 +97,12 @@ public class main {
 	    }
 	}
 	
-	   /**
-	   * This method is Draw MAP.
-	   * All items input 9 means reset BAG. (Use it when you Died)
-	   * @param xReal Map coordinate X axis.
-	   * @param yReal Map coordinate Y axis.
-	   */
+	/**
+	  * This method is Draw MAP.
+	  * All items input 9 means reset BAG. (Use it when you Died)
+	  * @param xReal Map coordinate X axis.
+	  * @param yReal Map coordinate Y axis.
+	  */
 	public static void drawMap (int xReal, int yReal) {	//DRAW MAP
 		int gridFinal = 5;
 		int totalLine = 5;
@@ -193,13 +193,12 @@ public class main {
 
 	}
 	
-	   /**
-	   * This method is NavigationPanel (Control+SHOW HP+SHOW NPC CHAT+Show items' status).
-	   * Use input 1-4 to move your location (xReal and yReal)
-	   * HP LINE 1#=2 HP
-	   * NPC Chat include auto Change Line (MAX 59 Chat in One Line)
-	   * inputBuffer is use to store the last your doing, method backPreviousPoint need it.
-	   */
+	/**
+	  * This method is NavigationPanel (Control+SHOW HP+SHOW NPC CHAT+Show items' status).
+	  * Use input 1-4 to move your location (xReal and yReal)
+	  * HP LINE 1#=2 HP
+	  * inputBuffer is use to store the last your doing, method backPreviousPoint need it.
+	  */
 	public static void navigationPannel() {	//Control Panel + Show Items
 		items bag= new items();
 		myBag = bag.yourBag;
@@ -261,24 +260,9 @@ public class main {
 		System.out.println(hp);
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("                        NPC chat box                       ");
-		npc.npc(xReal, yReal);
-		npcChat = npc.npcChat;
-		int chatlength = npcChat.length();
-		int repeatTime = chatlength/59;
-		int subStringStart = 0, subStringFinish = 0;
-		if (chatlength < 59) {
-			subStringFinish = chatlength;
-		} else {
-			subStringFinish = 59;
-		}
-		for (int i=0;i<repeatTime;i++) {
-			String temporary = npcChat.substring(subStringStart,subStringFinish);
-			System.out.println(temporary);
-			subStringStart = subStringStart + 59;
-			subStringFinish = subStringStart + 59;
-		}
-		String temporary2 = npcChat.substring(subStringStart);
-		System.out.println(temporary2);
+		npc npcChat = new npc();
+		npcChat.npc(xReal, yReal);
+		npcChat.npcOutput();
 		System.out.println("-----------------------------------------------------------");
         if (youWin == false & failure == false) {
         	Scanner input=new Scanner(System.in);
@@ -321,10 +305,10 @@ public class main {
 		prohibitedArea.prohibitedArea(xReal, yReal);	//Block block, In DEBUG, Annotation this line.
 	}
 	
-	   /**
-	   * This method is change back your location.
-	   * In game when you not allow in the BLOCK you will back previous point.
-	   */
+	/**
+	  * This method is change back your location.
+	  * In game when you not allow in the BLOCK you will back previous point.
+	  */
 	public static void backPreviousPoint() {	// IF GAME FILE NEED BACK PREVIOUS POINT FLAG: setuserNotAllowGame
 		if (setuserNotAllowGame == 1) {	
 			if (inputBuffer[0] == 1) {
@@ -349,10 +333,10 @@ public class main {
 		}
 	}
 	
-	   /**
-	   * This method is change status and active back previous point.
-	   * @param userNotAllowGame need back previous point (If want back enter 1). 
-	   */
+	/**
+	  * This method is change status and active back previous point.
+	  * @param userNotAllowGame need back previous point (If want back enter 1). 
+	  */
 	public static void keepGoingORnot(int userNotAllowGame) {
 		if (userNotAllowGame == 1) {
 			setuserNotAllowGame = 1;
@@ -361,11 +345,11 @@ public class main {
 		}
 	}
 	
-	   /**
-	   * This method is refresh HP.
-	   * And if HP=0 Finish game and reset.
-	   * @param nowHP The last back HP. From game block.
-	   */
+	/**
+	  * This method is refresh HP.
+	  * And if HP=0 Finish game and reset.
+	  * @param nowHP The last back HP. From game block.
+	  */
 	public static void refreshHP(int nowHP) {	//REFRESH HP
 		if (nowHP > 0) {
 			hp = nowHP;

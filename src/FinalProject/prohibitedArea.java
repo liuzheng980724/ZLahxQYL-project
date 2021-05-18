@@ -1,14 +1,20 @@
 package FinalProject;
 
+import javax.swing.JOptionPane;
+
 /**
 * NO GOING ZONE.
 * @author Zheng Liu
 * @version 1.0
 */
-
-import javax.swing.JOptionPane;
-
 public class prohibitedArea {
+	
+	   /**
+	   * This method is detect all zone which not allow go.
+	   * The block is not allow go will cancel the move.
+	   * @param x User coordinate X axis.
+	   * @param y User coordinate Y axis.
+	   */
 	public static void prohibitedArea(int x, int y) {
 		reCheck warnging = new reCheck();
 		if (x <= 5 & x > 0 & y <= 5 & y > 0) {

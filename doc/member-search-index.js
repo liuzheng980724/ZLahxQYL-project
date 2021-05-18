@@ -1,1 +1,1 @@
-memberSearchIndex = [{"p":"FinalProject","c":"missionIndex","l":"missionIndex(int, int, int)","u":"%3Cinit%3E(int,int,int)"}];updateSearchResults();
+memberSearchIndex = [{"p":"FinalProject","c":"statusCode","l":"clearStage"},{"p":"FinalProject","c":"statusCode","l":"statusCode()","u":"%3Cinit%3E()"},{"p":"FinalProject","c":"statusCode","l":"statusCode(int, int)","u":"statusCode(int,int)"}];updateSearchResults();

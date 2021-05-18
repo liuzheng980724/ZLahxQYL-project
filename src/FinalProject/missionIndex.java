@@ -14,13 +14,13 @@ public class missionIndex {
 	int clearStage[] = {0,0};
 	int myBag[] = {0,0,0,0,0};
 	
-	   /**
-	   * This method is INDEX all game block.
-	   * According to the coordinates of the current user to the correct Game Block.
-	   * @param xReal User coordinate X axis.
-	   * @param yReal User coordinate Y axis.
-	   * @param reset Activate the user to return to the previous point.
-	   */
+	/**
+	  * This method is INDEX all game block.
+	  * According to the coordinates of the current user to the correct Game Block.
+	  * @param xReal User coordinate X axis.
+	  * @param yReal User coordinate Y axis.
+	  * @param reset Activate the user to return to the previous point.
+	  */
 	public missionIndex(int xReal, int yReal, int reset) {
 		reCheck warning = new reCheck();
 		myBag = items.yourBag;

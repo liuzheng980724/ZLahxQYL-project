@@ -1,19 +1,17 @@
 package FinalProject;
 
+import java.util.Scanner;
+
 /**
 * NOT IMPORTANT TIPS.
 * @author Zheng Liu
 * @version 1.1
 */
-
-import java.util.Scanner;
-
 public class reCheck {
 	
-	public reCheck() {
-		
-	}
-	
+	   /**
+	   * This method is need user input y to know user finish the read.
+	   */
 	public void needYes () {
         while(true){
         	Scanner areYouReady = new Scanner(System.in); 
@@ -27,6 +25,9 @@ public class reCheck {
         }
     }
    
+	   /**
+	   * This method is show warning in Console when have a pop-up windows.
+	   */
 	public void warning () {
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("                          Warning!!");  
