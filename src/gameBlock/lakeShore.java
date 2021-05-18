@@ -1,18 +1,21 @@
 package gameBlock;
 
-/**
-* Game Block: Lake Shore
-* @author Ao Hua Xu
-* @version 1.0
-*/
-
 import javax.swing.JOptionPane;
 
 import FinalProject.items;
 import FinalProject.reCheck;
 
+/**
+* Game Block: Lake Shore
+* @author Ao Hua Xu
+* @version 1.0
+*/
 public class lakeShore{
 	
+	/**
+	  * Start this part of game.
+	  * Get item: Shell
+	  */
 	public lakeShore () {
 		reCheck warning = new reCheck();
 		warning.warning();

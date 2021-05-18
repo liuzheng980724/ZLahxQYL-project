@@ -13,6 +13,7 @@ public class statusCode {
 	 
 	   /**
 	   * This method is record you pass the battle stage.
+	   * All items input 9 means reset Status. (Use it when you Died)
 	   * @param stageNum Which Stage Bear OR Dragon.
 	   * @param passGame 1 = Pass.
 	   * @return Write in Array. Other Method (missionIndex, NPC ...) will use it.

@@ -1,17 +1,20 @@
 package gameBlock;
 
+import javax.swing.JOptionPane;
+
+import FinalProject.reCheck;
+
+
 /**
 * Game Block: Mountain Range
 * @author Ao Hua Xu
 * @version 1.0
 */
-
-import javax.swing.JOptionPane;
-
-import FinalProject.reCheck;
-
 public class mountainRange {
 	
+	/**
+	  * Start this part of game.
+	  */
 	public mountainRange () {
 		reCheck warning = new reCheck();
 		warning.warning();

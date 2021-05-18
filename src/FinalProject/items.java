@@ -49,4 +49,52 @@ public class items {
 		 }
 		 return yourBag;
 	 }
+	 
+	 /**
+	   * This method Print your BAG.
+	   * Use in Main.java
+	   */
+	 public static void bagOutput() {
+			String shellGet, campGet, swordGet, herbGet, eggGet;
+			if (yourBag[0]==1) {
+				shellGet = "You have it";			
+			}
+			else {
+				shellGet = "You haven't gotten";			
+			}
+			
+			if (yourBag[1]==1) {
+				campGet = "You have it";			
+			}
+			else {
+				campGet = "You haven't gotten";			
+			}
+			
+			if (yourBag[2]==1) {
+				swordGet = "You have it";			
+			}
+			else {
+				swordGet = "You haven't gotten";			
+			}
+			
+			if (yourBag[3]==1) {
+				herbGet = "You have it";			
+			}
+			else {
+				herbGet = "You haven't gotten";			
+			}
+			
+			if (yourBag[4]==1) {
+				eggGet = "You have it";			
+			}
+			else {
+				eggGet = "You haven't gotten";			
+			}
+			
+			System.out.println("ITEM: SHELL " + shellGet);
+			System.out.println("ITEM: SWORD " + swordGet);
+			System.out.println("ITEM: HERB  " + herbGet);
+			System.out.println("ITEM: CAMP  " + campGet);
+			System.out.println("ITEM: EGG   " + eggGet);
+	 }
 }

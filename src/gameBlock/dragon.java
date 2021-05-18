@@ -1,11 +1,5 @@
 package gameBlock;
 
-/**
-* Game Block: Dragon
-* @author Qiyuan Luo
-* @version 1.0
-*/
-
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -16,6 +10,11 @@ import FinalProject.missionIndex;
 import FinalProject.reCheck;
 import FinalProject.statusCode;
 
+/**
+* Game Block: Dragon
+* @author Qiyuan Luo
+* @version 1.0
+*/
 public class dragon {
 	int dragonHP = 100;
 	int hp;
@@ -24,6 +23,10 @@ public class dragon {
 	int [] myBag = {0,0,0,0,0};
 	int [] clearStage = {0,0};
 	
+	/**
+	  * Start this part of game.
+	  * Must Battle stage.
+	  */
 	public dragon () {
 		reCheck warning = new reCheck();
 		clearStage = statusCode.clearStage;
@@ -85,12 +88,20 @@ public class dragon {
 
 		}
 		
-		int creatdragonAttackPower () {
+	 /**
+	   * Randomly generated attack power Dragon.
+	   * @return myAttackPower Use in method dragon.
+	   */
+		public int creatdragonAttackPower () {
 			dragonAttackPower = new Random().nextInt(10) + 6;
 			return dragonAttackPower;
 		}
 		
-		int creatMyAttackPower () {
+	 /**
+	   * Randomly generated attack power User.
+	   * @return myAttackPower Use in method dragon.
+	   */
+		public int creatMyAttackPower () {
 			if (myBag [2] == 1) {
 				myAttackPower = new Random().nextInt(10) + 1;
 				myAttackPower = myAttackPower + 10;

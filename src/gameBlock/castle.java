@@ -1,16 +1,19 @@
 package gameBlock;
 
+import FinalProject.main;
+import FinalProject.reCheck;
+
 /**
 * Game Block: Castle
 * @author Qiyuan Luo
 * @version 1.0
 */
-
-import FinalProject.main;
-import FinalProject.reCheck;
-
 public class castle {
 	
+	/**
+	  * Start this part of game.
+	  * WIN POINT
+	  */
 	public castle() {
 		reCheck warning = new reCheck();
 		System.out.println("Congratulations. You win!");

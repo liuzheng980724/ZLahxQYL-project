@@ -1,18 +1,21 @@
 package gameBlock;
 
-/**
-* Game Block: Cliff Edge
-* @author Qiyuan Luo
-* @version 1.0
-*/
-
 import javax.swing.JOptionPane;
 
 import FinalProject.items;
 import FinalProject.reCheck;
 
+/**
+* Game Block: Cliff Edge
+* @author Qiyuan Luo
+* @version 1.0
+*/
 public class cliff_edge {
 	
+	/**
+	  * Start this part of game.
+	  * Get item: CAMP
+	  */
 	public cliff_edge () {
 		reCheck warning = new reCheck();
 		warning.warning();

@@ -199,53 +199,11 @@ public class main {
 	  * HP LINE 1#=2 HP
 	  * inputBuffer is use to store the last your doing, method backPreviousPoint need it.
 	  */
-	public static void navigationPannel() {	//Control Panel + Show Items
-		items bag= new items();
-		myBag = bag.yourBag;
-		String shellGet, campGet, swordGet, herbGet, eggGet;
-		if (myBag[0]==1) {
-			shellGet = "You have it";			
-		}
-		else {
-			shellGet = "You haven't gotten";			
-		}
-		
-		if (myBag[1]==1) {
-			campGet = "You have it";			
-		}
-		else {
-			campGet = "You haven't gotten";			
-		}
-		
-		if (myBag[2]==1) {
-			swordGet = "You have it";			
-		}
-		else {
-			swordGet = "You haven't gotten";			
-		}
-		
-		if (myBag[3]==1) {
-			herbGet = "You have it";			
-		}
-		else {
-			herbGet = "You haven't gotten";			
-		}
-		
-		if (myBag[4]==1) {
-			eggGet = "You have it";			
-		}
-		else {
-			eggGet = "You haven't gotten";			
-		}
-		
+	public static void navigationPannel() {	//Control Panel + Show Something
 		System.out.println("\n-----------------------------------------------------------");
 		System.out.println("                           My Bag");
 		System.out.println("-----------------------------------------------------------");
-		System.out.println("ITEM: SHELL " + shellGet);
-		System.out.println("ITEM: SWORD " + swordGet);
-		System.out.println("ITEM: HERB  " + herbGet);
-		System.out.println("ITEM: CAMP  " + campGet);
-		System.out.println("ITEM: EGG   " + eggGet);
+		items.bagOutput();
 		System.out.println("-----------------------------------------------------------");
 		System.out.print("HP: ");
 		System.out.print("|");
@@ -270,6 +228,7 @@ public class main {
         	System.out.println("Enter 2 to South");
         	System.out.println("Enter 3 to West");
         	System.out.println("Enter 4 to East");
+        	myBag = items.yourBag;
         	if (myBag[3]==1) {
             	System.out.println("Enter 5 to use Herb. Make HP up tp 100");
         	}

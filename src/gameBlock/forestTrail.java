@@ -1,11 +1,5 @@
 package gameBlock;
 
-/**
-* Game Block: Forest Trail
-* @author Zheng Liu
-* @version 1.1
-*/
-
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -15,6 +9,11 @@ import FinalProject.missionIndex;
 import FinalProject.reCheck;
 import FinalProject.statusCode;
 
+/**
+* Game Block: Forest Trail
+* @author Zheng Liu
+* @version 1.1
+*/
 public class forestTrail {
 	int bearHP = 100;
 	int bearAttackPower;
@@ -22,6 +21,10 @@ public class forestTrail {
 	int hp;
 	int [] myBag = {0,0,0,0,0};
 	
+	/**
+	  * Start this part of game.
+	  * Must Battle stage.
+	  */
 	public forestTrail () {
 		reCheck warning = new reCheck();
 		System.out.println("Hello, little boy.\nYou interrupted my hibernation.\nNow i want to eat you。"); 
@@ -63,12 +66,20 @@ public class forestTrail {
 		}
 	}
 	
-	int creatBearAttackPower () {
+	 /**
+	   * Randomly generated attack power Bear.
+	   * @return myAttackPower Use in method forestTrail.
+	   */
+	public int creatBearAttackPower () {
 		bearAttackPower = new Random().nextInt(10) + 1;
 		return bearAttackPower;
 	}
 	
-	int creatMyAttackPower () {
+	 /**
+	   * Randomly generated attack power User.
+	   * @return myAttackPower Use in method forestTrail.
+	   */
+	public int creatMyAttackPower () {
 		if (myBag [2] == 1) {
 			myAttackPower = new Random().nextInt(10) + 1;
 			myAttackPower = myAttackPower + 10;

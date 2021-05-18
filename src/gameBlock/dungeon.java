@@ -1,20 +1,23 @@
 package gameBlock;
 
-/**
-* Game Block: Dundeon
-* @author Qiyuan Luo
-* @version 1.0
-*/
-
 import javax.swing.JOptionPane;
 
 import FinalProject.items;
 import FinalProject.missionIndex;
 import FinalProject.reCheck;
 
+/**
+* Game Block: Dundeon
+* @author Qiyuan Luo
+* @version 1.0
+*/
 public class dungeon {
 	int [] myBag = {0,0,0,0,0};
 	
+	/**
+	  * Start this part of game.
+	  * Need item: CAMP. If not not allow pass.
+	  */
 	public dungeon () {
 		reCheck warning = new reCheck();
 		warning.warning();

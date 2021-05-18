@@ -1,18 +1,21 @@
 package gameBlock;
 
-/**
-* Game Block: Rock Path
-* @author Ao Hua Xu
-* @version 1.0
-*/
-
 import javax.swing.JOptionPane;
 
 import FinalProject.items;
 import FinalProject.reCheck;
 
+/**
+* Game Block: Rock Path
+* @author Ao Hua Xu
+* @version 1.0
+*/
 public class rockPath {
 	
+	/**
+	  * Start this part of game.
+	  * Get item: Herb
+	  */
 	public rockPath () {
 		reCheck warning = new reCheck();
 		warning.warning();

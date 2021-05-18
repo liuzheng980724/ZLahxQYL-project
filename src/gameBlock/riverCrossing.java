@@ -1,21 +1,24 @@
 package gameBlock;
 
-/**
-* Game Block: River Crossing
-* @author Zheng Liu
-* @version 1.1
-*/
-
 import javax.swing.JOptionPane;
 
 import FinalProject.items;
 import FinalProject.missionIndex;
 import FinalProject.reCheck;
 
+/**
+* Game Block: River Crossing
+* @author Zheng Liu
+* @version 1.1
+*/
 public class riverCrossing {
 	
 	int [] myBag = {0,0,0,0,0};
-
+	
+	/**
+	  * Start this part of game.
+	  * Need item: Shell. If not not allow pass.
+	  */
 	public riverCrossing() {
 		reCheck warning = new reCheck();
 		myBag = items.yourBag;

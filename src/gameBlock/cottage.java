@@ -1,18 +1,21 @@
 package gameBlock;
 
-/**
-* Game Block: Cottage
-* @author Zheng Liu
-* @version 1.1
-*/
-
 import javax.swing.JOptionPane;
 
 import FinalProject.items;
 import FinalProject.reCheck;
 
+/**
+* Game Block: Cottage
+* @author Zheng Liu
+* @version 1.1
+*/
 public class cottage {
 	
+	/**
+	  * Start this part of game.
+	  * Get item: Sword. Power Up
+	  */
 	public cottage () {
 		reCheck warning = new reCheck();
 		warning.warning();
