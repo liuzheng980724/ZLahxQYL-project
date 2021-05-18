@@ -1,29 +1,38 @@
 package FinalProject;
 
-/**
-* Main File. Run Project at here.
-* This File include Start game menu, Determine whether the game is over and clear the data, Show map, Display all items in the backpack and the console.
-* @author Zheng Liu
-* @version 1.1
-*/
-
 import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+/**
+* This is hole project start
+* @author Zheng Liu
+* @version 1.1
+*/
 public class main {
 	
+	/**
+	 * @serialField youWin inGame WIN flag.
+	 */
 	 public static boolean youWin = false;
 	 static boolean failure = true;
 	 static int xReal=0;
 	 static int yReal=0;
 	 static int setuserNotAllowGame = 0;
+	 /**
+	 * @serialField hp refreshHP YourHP, Sync from Game Block.
+	 */
 	 public static int hp;
 	 static int [] inputBuffer = {0,0,0,0};
 	 static int myBag[] = {0,0,0,0,0};
 	 static String npcChat;
 	 
-	public static void main (String[] args) {
+	   /**
+	   * This method is main.
+	   * If not failure will in loop.
+	   * @param args Main Output.
+	   */
+	 public static void main (String[] args) {
 		JFrame f = new JFrame();
 		Scanner getUser = new Scanner(System.in);
 		reCheck warning = new reCheck();
@@ -62,6 +71,11 @@ public class main {
 		System.exit(0);
 	}
 	
+	   /**
+	   * This method is when you are in Game.
+	   * If fail you will go to main menu
+	   * If not will in loop (no result Like no WIN/Fail)
+	   */
 	public static void inGame() { //IN Game
 		reCheck warning = new reCheck();
 	    while (youWin == false & failure == false) {
@@ -83,6 +97,12 @@ public class main {
 	    }
 	}
 	
+	   /**
+	   * This method is Draw MAP.
+	   * All items input 9 means reset BAG. (Use it when you Died)
+	   * @param xReal Map coordinate X axis.
+	   * @param yReal Map coordinate Y axis.
+	   */
 	public static void drawMap (int xReal, int yReal) {	//DRAW MAP
 		int gridFinal = 5;
 		int totalLine = 5;
@@ -173,6 +193,13 @@ public class main {
 
 	}
 	
+	   /**
+	   * This method is NavigationPanel (Control+SHOW HP+SHOW NPC CHAT+Show items' status).
+	   * Use input 1-4 to move your location (xReal and yReal)
+	   * HP LINE 1#=2 HP
+	   * NPC Chat include auto Change Line (MAX 59 Chat in One Line)
+	   * inputBuffer is use to store the last your doing, method backPreviousPoint need it.
+	   */
 	public static void navigationPannel() {	//Control Panel + Show Items
 		items bag= new items();
 		myBag = bag.yourBag;
@@ -294,6 +321,10 @@ public class main {
 		prohibitedArea.prohibitedArea(xReal, yReal);	//Block block, In DEBUG, Annotation this line.
 	}
 	
+	   /**
+	   * This method is change back your location.
+	   * In game when you not allow in the BLOCK you will back previous point.
+	   */
 	public static void backPreviousPoint() {	// IF GAME FILE NEED BACK PREVIOUS POINT FLAG: setuserNotAllowGame
 		if (setuserNotAllowGame == 1) {	
 			if (inputBuffer[0] == 1) {
@@ -318,6 +349,10 @@ public class main {
 		}
 	}
 	
+	   /**
+	   * This method is change status and active back previous point.
+	   * @param userNotAllowGame need back previous point (If want back enter 1). 
+	   */
 	public static void keepGoingORnot(int userNotAllowGame) {
 		if (userNotAllowGame == 1) {
 			setuserNotAllowGame = 1;
@@ -326,6 +361,11 @@ public class main {
 		}
 	}
 	
+	   /**
+	   * This method is refresh HP.
+	   * And if HP=0 Finish game and reset.
+	   * @param nowHP The last back HP. From game block.
+	   */
 	public static void refreshHP(int nowHP) {	//REFRESH HP
 		if (nowHP > 0) {
 			hp = nowHP;

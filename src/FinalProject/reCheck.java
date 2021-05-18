@@ -2,8 +2,6 @@ package FinalProject;
 
 /**
 * NOT IMPORTANT TIPS.
-* Function: Enter Y to confirm to continue.
-* Function: Reminder popup.
 * @author Zheng Liu
 * @version 1.1
 */

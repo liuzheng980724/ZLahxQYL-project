@@ -1,22 +1,26 @@
 package FinalProject;
 
-/**
-* Index File for all Block Game.
-* Accept the coordinates (X, Y) passed in from main.java and index them to the relevant game files.
-* Appropriate detection conditions to determine whether a game is needed.
-* @author Zheng Liu
-* @version 1.1
-*/
-
 import javax.swing.JOptionPane;
 
 import gameBlock.*;
 
+/**
+* Index all Block Game.
+* @author Zheng Liu
+* @version 1.1
+*/
 public class missionIndex {
 	int userFeedback;
 	int clearStage[] = {0,0};
 	int myBag[] = {0,0,0,0,0};
 	
+	   /**
+	   * This method is INDEX all game block.
+	   * According to the coordinates of the current user to the correct Game Block.
+	   * @param xReal User coordinate X axis.
+	   * @param yReal User coordinate Y axis.
+	   * @param reset Activate the user to return to the previous point.
+	   */
 	public missionIndex(int xReal, int yReal, int reset) {
 		reCheck warning = new reCheck();
 		myBag = items.yourBag;

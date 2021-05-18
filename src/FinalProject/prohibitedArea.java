@@ -1,8 +1,7 @@
 package FinalProject;
 
 /**
-* DO NOT GOING ZONE.
-* According to the coordinates (X, Y)
+* NO GOING ZONE.
 * @author Zheng Liu
 * @version 1.0
 */
