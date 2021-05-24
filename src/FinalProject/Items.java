@@ -8,7 +8,7 @@ package FinalProject;
 public class Items {
 	
 	/**
-	 * @serialField yourBag items All 5 item status.
+	 *  yourBag items All 5 item status.
 	 */
 	 public static int [] yourBag = {0,0,0,0,0}; //ALL ITEMS
 
