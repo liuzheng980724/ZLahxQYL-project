@@ -2,6 +2,16 @@ package FinalProject;
 
 import javax.swing.JOptionPane;
 
+/**
+* Mix some GameBlocks in one javaFile.
+* CHAT Content Provider: Ao Hua Xu and Qiyuan Luo
+* Only Mix Battle need block and Item get block.
+* Include GameBlock: CliffEdge, Dragon, ForestTrail, Cottage, LakeShore, and RockPath.
+* Sorry about I decide to mix our codes in one javaFile only by myself.
+* Group members work on other project.
+* @author Zheng Liu
+* @version 1.0
+*/
 public class Scene {
 	
 	  String title = null;
@@ -18,7 +28,15 @@ public class Scene {
 	  int myAttackPower;
 	  int npcDifficult = 0;
 	  int haveItem = 0;
+	  int [] clearStage = {0,0};
 
+	/**
+	 * This method is the main part in this javaFile.
+	 * Config the game part.
+	 * SHOW WELCOME.
+	 * Start Game.
+	 * @param location Where user in the map.
+	 */
 	public Scene (int location) {
 		this.locationBuffer = location;
 		mainConfig();
@@ -26,18 +44,38 @@ public class Scene {
 		inGaming();
 	}
 	
+	/**
+	 * Config the game part. What we need.
+	 */
 	public void mainConfig () {
-		
+		clearStage = StageClear.clearStage;
 		switch (locationBuffer) {
 		case  11: 
 			levelName = "Cliff Edge";
-			announcement = "" + "" + "" + "";
+			announcement = "";
+			battleLevel = 0;
+			npcName = "";
+			npcDifficult = 0;
+			haveItem = 1;
+			itemName = "Camp ";
+			itemDescription = "may be helpful to you";
 			break;
 		case 13:
 			levelName = "Dungeon";
 			break;
 		case 14:
 			levelName = "Dragon";
+			announcement = "Hello, warrior\nYou can't pass here\nNow you will die here. ";
+			if (clearStage[1] == 0) {
+				battleLevel = 1;
+			} else if (clearStage[1] == 1) {
+				battleLevel = 0;
+			}
+			npcName = "Dragon";
+			npcDifficult = 5;
+			haveItem = 1;
+			itemName = "EGG ";
+			itemDescription = "is your reward";
 			break;
 		case 15:
 			levelName = "Castle";
@@ -62,14 +100,28 @@ public class Scene {
 			npcName = "";
 			npcDifficult = 0;
 			haveItem = 1;
-			itemName = "Sword";
+			itemName = "Sword ";
 			itemDescription = "will increase your attack power";
 			break;
 		case 53:
 			levelName = "Lake Shore";
+			announcement = "";
+			battleLevel = 0;
+			npcName = "";
+			npcDifficult = 0;
+			haveItem = 1;
+			itemName = "Shell ";
+			itemDescription = "can be used to buy tickets";
 			break;
 		case 54:
 			levelName = "Rock Path";
+			announcement = "";
+			battleLevel = 0;
+			npcName = "";
+			npcDifficult = 0;
+			haveItem = 1;
+			itemName = "Herb ";
+			itemDescription = "can treat you";
 			break;
 		case 55:
 			levelName = "Mountain Range";
@@ -77,6 +129,9 @@ public class Scene {
 	}
 	}
 	
+	/**
+	 * Show welcome and tips do you want in.
+	 */
 	public void welcomeTips () {
 		ReCheck warning = new ReCheck();
 		warning.warning();
@@ -91,6 +146,9 @@ public class Scene {
 		}
 	}
 	
+	/**
+	 * Part game thing. Need battle or get item or both.
+	 */
 	public void inGaming () {
 		ReCheck warning = new ReCheck();
 		if (announcement != null & npcName != null) {
@@ -125,6 +183,9 @@ public class Scene {
 				npcHp = 100;
 			    Main.refreshHP(hp);
 			    switch (locationBuffer) {
+			    case 14:
+					StageClear.statusCode(2, 1);
+			    	break; 
 			    case 34:
 			    	StageClear.statusCode(1, 1);
 			    	break;
@@ -143,6 +204,9 @@ public class Scene {
 		}
 	}
 	
+	/**
+	 * Pick up items part.
+	 */
 	public void getItem () {
 		ReCheck warning = new ReCheck();
 		warning.warning();
@@ -151,8 +215,20 @@ public class Scene {
 	    int userFeedback = JOptionPane.showConfirmDialog(null,"Do you want pick it up? " + "\n" + itemName + itemDescription + ".","Permission",JOptionPane.YES_NO_OPTION);
 		if (userFeedback == 0) {
 			switch (locationBuffer) {
+			case 11:
+				Items.Items(0, 1, 0, 0, 0);
+				break;
+			case 14:
+				Items.Items(0, 0, 0, 0, 1);
+				break;
 			case 44:
 				Items.Items(0, 0, 1, 0, 0);
+				break;
+			case 53:
+				Items.Items(1, 0, 0, 0, 0);
+				break;
+			case 54:
+				Items.Items(0, 0, 0, 1, 0);
 				break;
 			}
 			System.out.println("\nGreat. You got it.");

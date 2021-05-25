@@ -35,10 +35,9 @@ public class MissionIndex {
 		}
 		
 		switch (location) {
-			case  11: 
+			case 11: 
 				if (myBag [1] == 0) {
-					System.out.println("\nStart transferring");
-					new CliffEdge();
+					new Scene(location);
 				}
 				break;
 			case 13:
@@ -47,10 +46,7 @@ public class MissionIndex {
 				break;
 			case 14:
 				if (clearStage [1] == 0 || myBag[4] == 0) {
-					if (xReal == 4 & yReal == 1 & reset == 0) {
-						System.out.println("\nStart transferring");
-						new Dragon();
-					}
+					new Scene(location);
 				}
 				break;
 			case 15:
@@ -58,7 +54,6 @@ public class MissionIndex {
 				new Castle();
 				break;
 			case 32:
-				//new Scene(location);
 				warning.warning();
 				userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! River Crossing. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
 				if (userFeedback == 0) {
@@ -72,43 +67,21 @@ public class MissionIndex {
 			case 34:
 				if (clearStage [0] == 0) {
 					new Scene(location);
-					/*warning.warning();
-					userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Forest Trail. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
-					if (userFeedback == 0) {
-						System.out.println("\nStart transferring");
-						new ForestTrail();
-					}
-					else {
-						System.out.println("\nTeleport back to the previous location.");
-						Main.keepGoingORnot(1);
-					}*/
 				}
 				break;
 			case 44:
 				if (myBag [2] == 0) {
 					new Scene(location);
-					/*warning.warning();
-					userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Cottage. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
-					if (userFeedback == 0) {
-						System.out.println("\nStart transferring");
-						new Cottage();
-					}
-					else {
-						System.out.println("\nTeleport back to the previous location.");
-						Main.keepGoingORnot(1);
-					}*/
 				}
 				break;
 			case 53:
 				if (myBag [0] == 0) {
-					System.out.println("\nStart transferring");
-					new LakeShore();
+					new Scene(location);
 				}
 				break;
 			case 54:
 				if (myBag [3] == 0) {
-					System.out.println("\nStart transferring");
-					new RockPath();	
+					new Scene(location);
 				}
 				break;
 			case 55:
