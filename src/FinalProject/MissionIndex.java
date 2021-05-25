@@ -58,6 +58,7 @@ public class MissionIndex {
 				new Castle();
 				break;
 			case 32:
+				//new Scene(location);
 				warning.warning();
 				userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! River Crossing. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
 				if (userFeedback == 0) {
@@ -70,7 +71,8 @@ public class MissionIndex {
 				break;
 			case 34:
 				if (clearStage [0] == 0) {
-					warning.warning();
+					new Scene(location);
+					/*warning.warning();
 					userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Forest Trail. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
 					if (userFeedback == 0) {
 						System.out.println("\nStart transferring");
@@ -79,12 +81,13 @@ public class MissionIndex {
 					else {
 						System.out.println("\nTeleport back to the previous location.");
 						Main.keepGoingORnot(1);
-					}
+					}*/
 				}
 				break;
 			case 44:
 				if (myBag [2] == 0) {
-					warning.warning();
+					new Scene(location);
+					/*warning.warning();
 					userFeedback = JOptionPane.showConfirmDialog(null,"Welcome! Cottage. \nDo you start entering the level?","Permission",JOptionPane.YES_NO_OPTION);
 					if (userFeedback == 0) {
 						System.out.println("\nStart transferring");
@@ -93,7 +96,7 @@ public class MissionIndex {
 					else {
 						System.out.println("\nTeleport back to the previous location.");
 						Main.keepGoingORnot(1);
-					}
+					}*/
 				}
 				break;
 			case 53:
