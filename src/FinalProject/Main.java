@@ -29,7 +29,7 @@ public class Main {
 	 
 	 /**
 	   * This method is main.
-	   * If not failure will in the loop.
+	   * Show the Main Menu.
 	   * @param args Main Output.
 	   */
 	 public static void main (String[] args) {
@@ -74,7 +74,7 @@ public class Main {
 	/**
 	  * This method is when you are in the Game.
 	  * If fail you will go to the main menu.
-	  * If not will in the loop (no result Like no WIN/Fail).
+	  * If not fail will continue in the loop (no result Like no WIN/Fail).
 	  */
 	public static void inGame() { //IN Game
 		ReCheck warning = new ReCheck();

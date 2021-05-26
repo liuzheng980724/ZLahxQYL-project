@@ -23,9 +23,9 @@ public class GeneratedAttackValue {
 		myBag = Items.yourBag;
 		ReCheck warning = new ReCheck();
 	    if (myBag [2] == 1) {
-	    	System.out.println("TIPS: You have a sword, and your attack power is locked between 10 and 20. ");
+	    	System.out.println("TIPS: You have a sword, your attack power is between 10 and 20. ");
 	    } else {
-	    	System.out.println("TIPS: You don't have a sword, and your attack power is locked within 10. "); 
+	    	System.out.println("TIPS: You don't have a sword, your attack power will not exceed 10. "); 
 	    }
 	    warning.needYes();
 	}

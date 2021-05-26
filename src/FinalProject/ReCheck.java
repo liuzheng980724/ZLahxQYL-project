@@ -28,13 +28,13 @@ public class ReCheck {
     }
    
 	   /**
-	   * This method shows a warning in Console when having a pop-up window.
+	   * This method shows a warning in the console when having a pop-up window.
 	   */
 	public void warning () {
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("                          Warning!!");  
 		System.out.println("-----------------------------------------------------------");
-		System.out.println("Here we have a pop-up window. \nIf you do not see that it may be blocked by other windows, \ntry to minimize other windows.\nYou will not allow to continue without closing the window.");
+		System.out.println("If you do not see a pop-up window here, \nmight be blocked by other windows, \ntry to minimize other windows. \nYou will not allow continuing without closing the window.");
 		System.out.println("-----------------------------------------------------------");
 	}
 }
