@@ -60,9 +60,6 @@ public class Scene {
 			itemName = "Camp ";
 			itemDescription = "may be helpful to you";
 			break;
-		case 13:
-			levelName = "Dungeon";
-			break;
 		case 14:
 			levelName = "Dragon";
 			announcement = "Hello, warrior\nYou can't pass here\nNow you will die here. ";
@@ -76,12 +73,6 @@ public class Scene {
 			haveItem = 1;
 			itemName = "EGG ";
 			itemDescription = "is your reward";
-			break;
-		case 15:
-			levelName = "Castle";
-			break;
-		case 32:
-			levelName = "River Crossing";
 			break;
 		case 34:
 			levelName = "Forest Trail";
@@ -122,9 +113,6 @@ public class Scene {
 			haveItem = 1;
 			itemName = "Herb ";
 			itemDescription = "can treat you";
-			break;
-		case 55:
-			levelName = "Mountain Range";
 			break;
 	}
 	}
