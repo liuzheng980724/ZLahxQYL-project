@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
-* This is hole project start
+* This is the whole project start.
 * @author Zheng Liu
 * @version 1.1
 */
@@ -29,7 +29,7 @@ public class Main {
 	 
 	 /**
 	   * This method is main.
-	   * If not failure will in loop.
+	   * If not failure will in the loop.
 	   * @param args Main Output.
 	   */
 	 public static void main (String[] args) {
@@ -72,9 +72,9 @@ public class Main {
 	}
 	
 	/**
-	  * This method is when you are in Game.
-	  * If fail you will go to main menu
-	  * If not will in loop (no result Like no WIN/Fail)
+	  * This method is when you are in the Game.
+	  * If fail you will go to the main menu.
+	  * If not will in the loop (no result Like no WIN/Fail).
 	  */
 	public static void inGame() { //IN Game
 		ReCheck warning = new ReCheck();
@@ -100,8 +100,8 @@ public class Main {
 	/**
 	  * This method is Draw MAP.
 	  * All items input 9 means reset BAG. (Use it when you Died)
-	  * @param xReal Map coordinate X axis.
-	  * @param yReal Map coordinate Y axis.
+	  * @param xReal Map coordinate X-axis.
+	  * @param yReal Map coordinate Y-axis.
 	  */
 	public static void drawMap (int xReal, int yReal) {	//DRAW MAP
 		int gridFinal = 5;
@@ -265,8 +265,8 @@ public class Main {
 	}
 	
 	/**
-	  * This method is change back your location.
-	  * In game when you not allow in the BLOCK you will back previous point.
+	  * This method is to change back your location.
+	  * In the game when you do not allow in the BLOCK you will back the previous point.
 	  */
 	public static void backPreviousPoint() {	// IF GAME FILE NEED BACK PREVIOUS POINT FLAG: setuserNotAllowGame
 		if (setuserNotAllowGame == 1) {	
@@ -293,8 +293,8 @@ public class Main {
 	}
 	
 	/**
-	  * This method is change status and active back previous point.
-	  * @param userNotAllowGame need back previous point (If want back enter 1). 
+	  * This method is changed status and active back previous point.
+	  * @param userNotAllowGame needs back previous point (If want back enter 1). 
 	  */
 	public static void keepGoingORnot(int userNotAllowGame) {
 		if (userNotAllowGame == 1) {
@@ -305,8 +305,8 @@ public class Main {
 	}
 	
 	/**
-	  * This method is refresh HP.
-	  * And if HP=0 Finish game and reset.
+	  * This method is to refresh HP.
+	  * And if HP=0 Finish the game and reset.
 	  * @param nowHP The last back HP. From game block.
 	  */
 	public static void refreshHP(int nowHP) {	//REFRESH HP

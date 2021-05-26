@@ -51,7 +51,7 @@ public class Items {
 	 }
 	 
 	 /**
-	   * This method Print your BAG.
+	   * This method Prints your BAG.
 	   * Use in Main.java
 	   */
 	 public static void bagOutput() {

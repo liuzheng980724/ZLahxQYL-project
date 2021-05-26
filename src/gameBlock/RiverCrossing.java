@@ -16,8 +16,8 @@ public class RiverCrossing {
 	int [] myBag = {0,0,0,0,0};
 	
 	/**
-	  * Start this part of game.
-	  * Need item: Shell. If not not allow pass.
+	  * Start this part of the game.
+	  * Need item: Shell. If not allow pass.
 	  */
 	public RiverCrossing() {
 		ReCheck warning = new ReCheck();
@@ -27,7 +27,7 @@ public class RiverCrossing {
 		if (userFeedback == 0) {
 			System.out.println("\nGreat. Use boat we need you have shell.");
 			if (myBag [0] == 1) {
-				System.out.println("\nGreat. You have shell, now you can keep going.");
+				System.out.println("\nGreat. You have the shell, now you can keep going.");
 			}
 			else {
 				System.out.println("\nHey. We cannot find you have shell. We cannont help you. You have to back now.");

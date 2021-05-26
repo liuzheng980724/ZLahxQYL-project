@@ -17,8 +17,8 @@ public class MissionIndex {
 	/**
 	  * This method is INDEX all game block.
 	  * According to the coordinates of the current user to the correct Game Block.
-	  * @param xReal User coordinate X axis.
-	  * @param yReal User coordinate Y axis.
+	  * @param xReal User coordinate X-axis.
+	  * @param yReal User coordinate Y-axis.
 	  * @param reset Activate the user to return to the previous point.
 	  */
 	public MissionIndex(int xReal, int yReal, int reset) {

@@ -16,7 +16,7 @@ public class GeneratedAttackValue {
 	public int attackPower = 0;
 	
 	/**
-	 * This method is only a tips to user.
+	 * This method is only a tip to the user.
 	 * Are you have a Sword?
 	 */
 	public void AttackTips () { 

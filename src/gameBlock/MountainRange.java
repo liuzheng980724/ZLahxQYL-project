@@ -10,7 +10,7 @@ import FinalProject.ReCheck;
 public class MountainRange {
 	
 	/**
-	  * Start this part of game.
+	  * Start this part of the game.
 	  */
 	public MountainRange () {
 		ReCheck warning = new ReCheck();

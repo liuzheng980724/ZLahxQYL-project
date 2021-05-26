@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ReCheck {
 	
 	   /**
-	   * This method is need user input y to know user finish the read.
+	   * This method is needed user input y to know the user finishes the read.
 	   */
 	public void needYes () {
     	Scanner areYouReady = new Scanner(System.in); 
@@ -28,7 +28,7 @@ public class ReCheck {
     }
    
 	   /**
-	   * This method is show warning in Console when have a pop-up windows.
+	   * This method shows a warning in Console when having a pop-up window.
 	   */
 	public void warning () {
 		System.out.println("-----------------------------------------------------------");

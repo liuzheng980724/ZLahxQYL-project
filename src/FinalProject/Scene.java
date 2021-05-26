@@ -5,10 +5,10 @@ import javax.swing.JOptionPane;
 /**
 * Mix some GameBlocks in one javaFile.
 * CHAT Content Provider: Ao Hua Xu and Qiyuan Luo
-* Only Mix Battle need block and Item get block.
+* Only Mix Battle needs block and Item gets block.
 * Include GameBlock: CliffEdge, Dragon, ForestTrail, Cottage, LakeShore, and RockPath.
 * Sorry about I decide to mix our codes in one javaFile only by myself.
-* Group members work on other project.
+* Group members work on other projects.
 * @author Zheng Liu
 * @version 1.0
 */
@@ -31,7 +31,7 @@ public class Scene {
 	  int [] clearStage = {0,0};
 
 	/**
-	 * This method is the main part in this javaFile.
+	 * This method is the main part of this javaFile.
 	 * Config the game part.
 	 * SHOW WELCOME.
 	 * Start Game.

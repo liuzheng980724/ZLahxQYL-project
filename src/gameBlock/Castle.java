@@ -11,7 +11,7 @@ import FinalProject.ReCheck;
 public class Castle {
 	
 	/**
-	  * Start this part of game.
+	  * Start this part of the game.
 	  * WIN POINT
 	  */
 	public Castle() {

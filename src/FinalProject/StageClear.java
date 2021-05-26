@@ -12,11 +12,11 @@ public class StageClear {
 	 public static int [] clearStage = {0,0};
 	 
 	   /**
-	   * This method is record you pass the battle stage.
+	   * This method is recording you pass the battle stage.
 	   * All items input 9 means reset Status. (Use it when you Died)
 	   * @param stageNum Which Stage Bear OR Dragon.
 	   * @param passGame 1 = Pass.
-	   * @return Write in Array. Other Method (missionIndex, NPC ...) will use it.
+	   * @return Write in Array. Other methods (missionIndex, NPC ...) will use it.
 	   */
 	 public static int[] statusCode (int stageNum, int passGame) {
 		 if (stageNum == 9 & passGame == 9) {

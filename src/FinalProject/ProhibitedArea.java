@@ -10,10 +10,10 @@ import javax.swing.JOptionPane;
 public class ProhibitedArea {
 	
 	   /**
-	   * This method is detect all zone which not allow go.
-	   * The block is not allow go will cancel the move.
-	   * @param x User coordinate X axis.
-	   * @param y User coordinate Y axis.
+	   * This method detects all zone which not allows going.
+	   * The block does not allow go will cancel the move.
+	   * @param x User coordinate X-axis.
+	   * @param y User coordinate Y-axis.
 	   */
 	public static void prohibitedArea(int x, int y) {
 		ReCheck warnging = new ReCheck();

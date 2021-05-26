@@ -1,7 +1,7 @@
 package FinalProject;
 
 /**
-* ALL NPC CHAT BOX content at here.
+* ALL NPC CHATBOX content at here.
 * NPC CHAT Content Provider: Ao Hua Xu
 * @author Zheng Liu
 * @version 1.3
@@ -13,10 +13,10 @@ public class Npc {
 	int myBag[] = {0,0,0,0,0};
 	
 	   /**
-	   * This method is use to put the content that needs to be displayed into npcChat.
+	   * This method is used to put the content that needs to be displayed into npcChat.
 	   * According to the coordinates of the current user to the correct Game Block.
-	   * @param xreal User coordinate X axis.
-	   * @param yreal User coordinate Y axis.
+	   * @param xreal User coordinate X-axis.
+	   * @param yreal User coordinate Y-axis.
 	   * @return npcChat Where to output NPC prompt.
 	   */
 	public String npc (int xreal, int yreal) {
@@ -102,7 +102,7 @@ public class Npc {
 	}
 	
 	   /**
-	   * This method is Print the NPC CHAT.
+	   * This method is to Print the NPC CHAT.
 	   */
 	public void npcOutput() {
 		int chatlength = npcChat.length();

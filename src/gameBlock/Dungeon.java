@@ -7,7 +7,7 @@ import FinalProject.MissionIndex;
 import FinalProject.ReCheck;
 
 /**
-* Game Block: Dundeon
+* Game Block: Dungeon
 * @author Qiyuan Luo
 * @version 1.0
 */
@@ -15,7 +15,7 @@ public class Dungeon {
 	int [] myBag = {0,0,0,0,0};
 	
 	/**
-	  * Start this part of game.
+	  * Start this part of the game.
 	  * Need item: CAMP. If not not allow pass.
 	  */
 	public Dungeon () {
