@@ -45,7 +45,7 @@ public class Main {
 			System.out.println("1. Start Game!");
 			System.out.println("2. Log Out!");
 			System.out.println("-----------------------------------------------------------");
-			System.out.println("INPUT YOUR CHOOSE:");
+			System.out.println("INPUT YOUR CHOICE:");
 			int gameStartInput = getUser.nextInt();
 			if (gameStartInput == 1) {
 				xReal=3;
